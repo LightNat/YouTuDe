@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31424.327
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YouTuDe", "YouTuDe\YouTuDe.csproj", "{66D0879F-1AD3-4A14-8E22-DC28B04641BD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66D0879F-1AD3-4A14-8E22-DC28B04641BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66D0879F-1AD3-4A14-8E22-DC28B04641BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66D0879F-1AD3-4A14-8E22-DC28B04641BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66D0879F-1AD3-4A14-8E22-DC28B04641BD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {662AA527-8DC6-4FE6-A2ED-8B0A73C23470}
+	EndGlobalSection
+EndGlobal

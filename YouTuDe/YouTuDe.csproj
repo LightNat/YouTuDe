@@ -1,0 +1,284 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{66D0879F-1AD3-4A14-8E22-DC28B04641BD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>YouTuDe</RootNamespace>
+    <AssemblyName>YouTuDe</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account\Account.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Account\Account.Designer.cs">
+      <DependentUpon>Account.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminViewSpotsUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminViewSpotsUserControl.Designer.cs">
+      <DependentUpon>AdminViewSpotsUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Status.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Status.Designer.cs">
+      <DependentUpon>Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Pending.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Pending.Designer.cs">
+      <DependentUpon>Pending.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Drivers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Drivers.Designer.cs">
+      <DependentUpon>Drivers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Tourist.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Tourist.Designer.cs">
+      <DependentUpon>Tourist.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Spots.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Spots.Designer.cs">
+      <DependentUpon>Spots.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientViewSpotsNorthernUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ClientViewSpotsNorthernUserControl.Designer.cs">
+      <DependentUpon>ClientViewSpotsNorthernUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClientViewSpotsSouthernUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ClientViewSpotsSouthernUserControl.Designer.cs">
+      <DependentUpon>ClientViewSpotsSouthernUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Status.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\Status.Designer.cs">
+      <DependentUpon>Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Requests.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\Requests.Designer.cs">
+      <DependentUpon>Requests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Spots.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\Spots.Designer.cs">
+      <DependentUpon>Spots.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Client\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connection\Connection.cs" />
+    <Compile Include="DriverUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DriverUserControl.Designer.cs">
+      <DependentUpon>DriverUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forgot\Code.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forgot\Code.Designer.cs">
+      <DependentUpon>Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forgot\Id.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forgot\Id.Designer.cs">
+      <DependentUpon>Id.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forgot\Password.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forgot\Password.Designer.cs">
+      <DependentUpon>Password.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Function\Function.cs" />
+    <Compile Include="IfNoUsers\AdminNumber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="IfNoUsers\AdminNumber.Designer.cs">
+      <DependentUpon>AdminNumber.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PendingDriverUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PendingDriverUserControl.Designer.cs">
+      <DependentUpon>PendingDriverUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TouristUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="TouristUserControl.Designer.cs">
+      <DependentUpon>TouristUserControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Account\Account.resx">
+      <DependentUpon>Account.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminViewSpotsUserControl.resx">
+      <DependentUpon>AdminViewSpotsUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Status.resx">
+      <DependentUpon>Status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Pending.resx">
+      <DependentUpon>Pending.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Drivers.resx">
+      <DependentUpon>Drivers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Tourist.resx">
+      <DependentUpon>Tourist.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Spots.resx">
+      <DependentUpon>Spots.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientViewSpotsNorthernUserControl.resx">
+      <DependentUpon>ClientViewSpotsNorthernUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClientViewSpotsSouthernUserControl.resx">
+      <DependentUpon>ClientViewSpotsSouthernUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\Status.resx">
+      <DependentUpon>Status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\Requests.resx">
+      <DependentUpon>Requests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\Spots.resx">
+      <DependentUpon>Spots.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Client\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DriverUserControl.resx">
+      <DependentUpon>DriverUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forgot\Code.resx">
+      <DependentUpon>Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forgot\Id.resx">
+      <DependentUpon>Id.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forgot\Password.resx">
+      <DependentUpon>Password.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="IfNoUsers\AdminNumber.resx">
+      <DependentUpon>AdminNumber.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PendingDriverUserControl.resx">
+      <DependentUpon>PendingDriverUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="TouristUserControl.resx">
+      <DependentUpon>TouristUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

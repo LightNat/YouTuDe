@@ -1,0 +1,518 @@
+﻿using System;
+using System.IO;
+using System.Drawing;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace YouTuDe.Client
+{
+    public partial class Spots : Form
+    {
+        public static bool state = false;
+
+        //Variables for ViewSpots
+        private int attractionCount;
+        private string[] attractionId = new string[100];
+        private string[] touristAttraction = new string[100];
+        private string[] touristDestination = new string[100];
+        private string[] attractionImage = new string[100];
+        private string[] attractionCost = new string[100];
+        private string[] attractionDescription = new string[100];
+
+        private int id;
+
+        private string profile;
+
+        public static string totalUpdate;
+
+        public static double totalSouthern;
+        public static string attractionSouthern;
+
+        public static double totalNorthern;
+        public static string attractionNorthern;
+
+        //Reset Southern
+        public static int resetCountSouthern = 0;
+        public static double resetTotalSouthern = 0.00;
+        public static string resetSpotsSouthern = "";
+
+        //Reset Northern
+        public static int resetCountNorthern = 0;
+        public static double resetTotalNorthern = 0.00;
+        public static string resetSpotsNorthern = "";
+
+        //for string count
+        int count;
+        string name;
+
+        public Spots()
+        {
+            InitializeComponent();
+        }
+
+        private void Spots_Load(object sender, EventArgs e)
+        {
+            id = Convert.ToInt32(Login.userid);
+
+            displayProfile();
+
+            Allignment();
+
+            lblfullname.Text = Login.firstname + " " + Login.lastname;
+
+            GenerateSpotsNorthern();
+            GenerateSpotsSouthern();
+
+            CebuParts();
+
+            ResetSouthern();
+            ResetNorthern();
+        }
+
+        public void CebuParts()
+        {
+            try
+            {
+                var imageSouthern = Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\CebuMapSouthern.png";
+                pbsouthern.Image = Image.FromFile(imageSouthern);
+
+                var imageNorthern = Path.GetDirectoryName(Application.ExecutablePath) + "\\Image\\CebuMapNorthern.png";
+                pbnorthern.Image = Image.FromFile(imageNorthern);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        public static void ResetSouthern()
+        {
+            totalSouthern = resetCountSouthern;
+            ClientViewSpotsSouthernUserControl.spotsCount = resetCountSouthern;
+            attractionSouthern = resetSpotsSouthern;
+        }
+
+        public static void ResetNorthern()
+        {
+            totalNorthern = resetCountNorthern;
+            ClientViewSpotsNorthernUserControl.spotsCount = resetCountNorthern;
+            attractionNorthern = resetSpotsNorthern;
+        }
+
+        public void Allignment()
+        {
+            name = Login.firstname + " " + Login.lastname;
+            count = name.Length;
+
+            if (count == 20)
+            {
+                this.lblfullname.Location = new Point(-4, 114);
+            }
+            else if (count == 19)
+            {
+                this.lblfullname.Location = new Point(0, 114);
+            }
+            else if (count == 18)
+            {
+                this.lblfullname.Location = new Point(4, 114);
+            }
+            else if (count == 17)
+            {
+                this.lblfullname.Location = new Point(8, 114);
+            }
+            else if (count == 16)
+            {
+                this.lblfullname.Location = new Point(12, 114);
+            }
+            else if (count == 15)
+            {
+                this.lblfullname.Location = new Point(16, 114);
+            }
+            else if (count == 14)
+            {
+                this.lblfullname.Location = new Point(20, 114);
+            }
+            else if (count == 13)
+            {
+                this.lblfullname.Location = new Point(24, 114);
+            }
+            else if (count == 12)
+            {
+                this.lblfullname.Location = new Point(28, 114);
+            }
+            else if (count == 11)
+            {
+                this.lblfullname.Location = new Point(32, 114);
+            }
+            else if (count == 10)
+            {
+                this.lblfullname.Location = new Point(36, 114);
+            }
+            else if (count == 9)
+            {
+                this.lblfullname.Location = new Point(40, 114);
+            }
+            else if (count == 8)
+            {
+                this.lblfullname.Location = new Point(44, 114);
+            }
+            else if (count == 7)
+            {
+                this.lblfullname.Location = new Point(48, 114);
+            }
+            else if (count == 6)
+            {
+                this.lblfullname.Location = new Point(52, 114);
+            }
+            else if (count == 5)
+            {
+                this.lblfullname.Location = new Point(56, 114);
+            }
+            else if (count == 4)
+            {
+                this.lblfullname.Location = new Point(60, 114);
+            }
+            else if (count == 3)
+            {
+                this.lblfullname.Location = new Point(64, 114);
+            }
+
+        }
+
+        public void displayProfile()
+        {
+            try
+            {
+                Connection.Connection.DB();
+                Function.Function.gen = "SELECT * FROM users WHERE userid = '"+id+"' ";
+                Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.conn);
+                Function.Function.reader = Function.Function.command.ExecuteReader();
+
+                if (Function.Function.reader.HasRows)
+                {
+                    Function.Function.reader.Read();
+
+                    profile = Function.Function.reader.GetValue(8).ToString();
+
+                    var image = Path.GetDirectoryName(Application.ExecutablePath) + "\\Profile\\" + profile;
+                    pbprofile.Image = Image.FromFile(image);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            Client.Dashboard dashboard = new Client.Dashboard();
+            this.Visible = false;
+            dashboard.Show();
+        }
+
+        private void btnSpots_Click(object sender, EventArgs e)
+        {
+            Client.Spots spots = new Client.Spots();
+            this.Visible = false;
+            spots.Show();
+        }
+
+        private void btnRequests_Click(object sender, EventArgs e)
+        {
+            Client.Requests requests = new Client.Requests();
+            this.Visible = false;
+            requests.Show();
+        }
+
+        private void btnStatus_Click(object sender, EventArgs e)
+        {
+            Client.Status status = new Client.Status();
+            this.Visible = false;
+            status.Show();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            string text = "Do you wish to log out?";
+            string caption = "Logout";
+            DialogResult result = MessageBox.Show(text, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Login login = new Login();
+                this.Visible = false;
+                login.Show();
+            }
+        }
+
+        private void btnDashboard_MouseHover(object sender, EventArgs e)
+        {
+            btnDashboard.BackColor = Color.FromArgb(255, 222, 89);
+            btnDashboard.ForeColor = Color.Red;
+        }
+
+        private void btnDashboard_MouseLeave(object sender, EventArgs e)
+        {
+            btnDashboard.BackColor = Color.FromArgb(28, 33, 32);
+            btnDashboard.ForeColor = Color.FromArgb(255, 222, 89);
+        }
+
+        private void btnSpots_MouseHover(object sender, EventArgs e)
+        {
+            btnSpots.BackColor = Color.FromArgb(255, 222, 89);
+            btnSpots.ForeColor = Color.Red;
+        }
+
+        private void btnSpots_MouseLeave(object sender, EventArgs e)
+        {
+            btnSpots.BackColor = Color.FromArgb(28, 33, 32);
+            btnSpots.ForeColor = Color.FromArgb(255, 222, 89);
+        }
+
+        private void btnRequests_MouseHover(object sender, EventArgs e)
+        {
+            btnRequests.BackColor = Color.FromArgb(255, 222, 89);
+            btnRequests.ForeColor = Color.Red;
+        }
+
+        private void btnRequests_MouseLeave(object sender, EventArgs e)
+        {
+            btnRequests.BackColor = Color.FromArgb(28, 33, 32);
+            btnRequests.ForeColor = Color.FromArgb(255, 222, 89);
+        }
+
+        private void btnStatus_MouseHover(object sender, EventArgs e)
+        {
+            btnStatus.BackColor = Color.FromArgb(255, 222, 89);
+            btnStatus.ForeColor = Color.Red;
+        }
+
+        private void btnStatus_MouseLeave(object sender, EventArgs e)
+        {
+            btnStatus.BackColor = Color.FromArgb(28, 33, 32);
+            btnStatus.ForeColor = Color.FromArgb(255, 222, 89);
+        }
+
+        private void btnLogout_MouseHover(object sender, EventArgs e)
+        {
+            btnLogout.BackColor = Color.FromArgb(255, 222, 89);
+            btnLogout.ForeColor = Color.Red;
+        }
+
+        private void btnLogout_MouseLeave(object sender, EventArgs e)
+        {
+            btnLogout.BackColor = Color.FromArgb(28, 33, 32);
+            btnLogout.ForeColor = Color.FromArgb(255, 222, 89);
+        }
+
+        private void GenerateSpotsNorthern()
+        {
+            flowLayoutPanelSpotsNorthern.Controls.Clear();
+            try
+            {
+                Connection.Connection.DB();
+                Function.Function.gen = "SELECT COUNT(*) FROM Attractions WHERE attractionCategory = 'Northern' ";
+                Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.conn);
+                Function.Function.reader = Function.Function.command.ExecuteReader();
+
+                if (Function.Function.reader.HasRows)
+                {
+                    Function.Function.reader.Read();
+
+                    string count = Function.Function.reader.GetValue(0).ToString();
+                    attractionCount = Convert.ToInt32(count);
+
+                    ClientViewSpotsNorthernUserControl[] clientViewSpotsUserControl = new ClientViewSpotsNorthernUserControl[attractionCount];
+
+                    try
+                    {
+                        Connection.Connection.DB();
+                        Function.Function.gen = "SELECT * FROM Attractions WHERE attractionCategory = 'Northern' ";
+                        Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.conn);
+                        Function.Function.reader = Function.Function.command.ExecuteReader();
+
+                        if (Function.Function.reader.HasRows)
+                        {
+                            for (int i = 0; i < clientViewSpotsUserControl.Length; i++)
+                            {
+                                Function.Function.reader.Read();
+
+                                attractionId[i] = Function.Function.reader.GetValue(0).ToString();
+                                touristAttraction[i] = Function.Function.reader.GetValue(1).ToString();
+                                touristDestination[i] = Function.Function.reader.GetValue(2).ToString();
+                                attractionImage[i] = Function.Function.reader.GetValue(3).ToString();
+                                attractionCost[i] = Function.Function.reader.GetValue(4).ToString();
+                                attractionDescription[i] = Function.Function.reader.GetValue(5).ToString();
+
+                                //Initialize
+                                clientViewSpotsUserControl[i] = new ClientViewSpotsNorthernUserControl();
+
+                                //Adding Data
+                                clientViewSpotsUserControl[i].attractionId = attractionId[i];
+                                clientViewSpotsUserControl[i].touristAttraction = touristAttraction[i];
+                                clientViewSpotsUserControl[i].touristDestination = touristDestination[i];
+                                clientViewSpotsUserControl[i].attractionImage = attractionImage[i];
+                                clientViewSpotsUserControl[i].attractionCost = attractionCost[i];
+                                clientViewSpotsUserControl[i].attractionDescription = attractionDescription[i];
+
+                                flowLayoutPanelSpotsNorthern.Controls.Add(clientViewSpotsUserControl[i]);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void GenerateSpotsSouthern()
+        {
+            flowLayoutPanelSpotsSouthern.Controls.Clear();
+            try
+            {
+                Connection.Connection.DB();
+                Function.Function.gen = "SELECT COUNT(*) FROM Attractions WHERE attractionCategory = 'Southern' ";
+                Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.conn);
+                Function.Function.reader = Function.Function.command.ExecuteReader();
+
+                if (Function.Function.reader.HasRows)
+                {
+                    Function.Function.reader.Read();
+
+                    string count = Function.Function.reader.GetValue(0).ToString();
+                    attractionCount = Convert.ToInt32(count);
+
+                    ClientViewSpotsSouthernUserControl[] clientViewSpotsUserControl = new ClientViewSpotsSouthernUserControl[attractionCount];
+
+                    try
+                    {
+                        Connection.Connection.DB();
+                        Function.Function.gen = "SELECT * FROM Attractions WHERE attractionCategory = 'Southern' ";
+                        Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.conn);
+                        Function.Function.reader = Function.Function.command.ExecuteReader();
+
+                        if (Function.Function.reader.HasRows)
+                        {
+                            for (int i = 0; i < clientViewSpotsUserControl.Length; i++)
+                            {
+                                Function.Function.reader.Read();
+
+                                attractionId[i] = Function.Function.reader.GetValue(0).ToString();
+                                touristAttraction[i] = Function.Function.reader.GetValue(1).ToString();
+                                touristDestination[i] = Function.Function.reader.GetValue(2).ToString();
+                                attractionImage[i] = Function.Function.reader.GetValue(3).ToString();
+                                attractionCost[i] = Function.Function.reader.GetValue(4).ToString();
+                                attractionDescription[i] = Function.Function.reader.GetValue(5).ToString();
+
+                                //Initialize
+                                clientViewSpotsUserControl[i] = new ClientViewSpotsSouthernUserControl();
+
+                                //Adding Data
+                                clientViewSpotsUserControl[i].attractionId = attractionId[i];
+                                clientViewSpotsUserControl[i].touristAttraction = touristAttraction[i];
+                                clientViewSpotsUserControl[i].touristDestination = touristDestination[i];
+                                clientViewSpotsUserControl[i].attractionImage = attractionImage[i];
+                                clientViewSpotsUserControl[i].attractionCost = attractionCost[i];
+                                clientViewSpotsUserControl[i].attractionDescription = attractionDescription[i];
+
+                                flowLayoutPanelSpotsSouthern.Controls.Add(clientViewSpotsUserControl[i]);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void pbsouthern_Click(object sender, EventArgs e)
+        {
+            btnsouthern.Visible = true;
+            btnsavesouthern.Visible = true;
+            btnchecksouthern.Visible = true;
+
+            flowLayoutPanelSpotsSouthern.Visible = true;
+
+            lblsouth.Visible = false;
+            pbsouthern.Visible = false;
+
+            //hide other pb and its label
+            lblnorth.Visible = false;
+            pbnorthern.Visible = false;
+
+            lblsouthern.Visible = true;
+        }
+
+        private void pbnorthern_Click(object sender, EventArgs e)
+        {
+            btnnorthern.Visible = true;
+            btnsavenorthern.Visible = true;
+            btnchecknorthern.Visible = true;
+
+            flowLayoutPanelSpotsNorthern.Visible = true;
+
+            lblnorth.Visible = false;
+            pbnorthern.Visible = false;
+
+            //hide other pb and its label
+            lblsouth.Visible = false;
+            pbsouthern.Visible = false;
+
+            lblnorthern.Visible = true;
+        }
+
+        private void btnsouthern_Click(object sender, EventArgs e)
+        {
+            btnsouthern.Visible = false;
+            btnsavesouthern.Visible = false;
+            btnchecksouthern.Visible = false;
+
+            flowLayoutPanelSpotsSouthern.Visible = false;
+
+            lblsouth.Visible = true;
+            pbsouthern.Visible = true;
+
+            //show other pb and its label
+            lblnorth.Visible = true;
+            pbnorthern.Visible = true;
+
+            lblsouthern.Visible = false;
+        }
+
+        private void btnnorthern_Click(object sender, EventArgs e)
+        {
+            btnnorthern.Visible = false;
+            btnsavenorthern.Visible = false;
+            btnchecknorthern.Visible = false;
+
+            flowLayoutPanelSpotsNorthern.Visible = false;
+
+            lblnorth.Visible = true;
+            pbnorthern.Visible = true;
+
+            //hide other pb and its label
+            lblsouth.Visible = true;
+            pbsouthern.Visible = true;
+
+            lblnorthern.Visible = false;
+        }
+    }
+}

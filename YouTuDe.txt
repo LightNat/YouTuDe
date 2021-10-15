@@ -1,0 +1,41 @@
+CREATE DATABASE YouTuDe;
+
+CREATE TABLE users(
+		userid INT PRIMARY KEY IDENTITY(1, 1),
+		firstname varchar(20),
+		lastname varchar(20),
+		age int,
+		license varchar(50),
+		accountSid varchar(50),
+		authToken varchar(50),
+		accountNumber varchar(50),
+		profile varchar(1000),
+		userNumber varchar(20) NOT NULL,
+		username varchar(20) NOT NULL,
+		password varchar(20) NOT NULL,
+		rolename varchar(20) NOT NULL,
+		verCode varchar(6)
+);
+
+CREATE TABLE pendingDriver(
+		userid INT PRIMARY KEY IDENTITY(1, 1),
+		firstname varchar(20),
+		lastname varchar(20),
+		age int,
+		license varchar(50),
+		profile varchar(1000),
+		userNumber varchar(20) NOT NULL,
+		username varchar(20) NOT NULL,
+		password varchar(20) NOT NULL,
+		rolename varchar(20) NOT NULL
+);
+
+CREATE TABLE Attractions(
+		attractionid INT PRIMARY KEY IDENTITY(1, 1),
+		touristAttraction varchar(50) NOT NULL,
+		touristDestination varchar(50) NOT NULL,
+		attractionImage varchar(1000) NOT NULL,
+		attractionCost decimal(15, 2) NOT NULL,
+		attractionDescription varchar(50) NOT NULL,
+		attractionCategory varchar(50) NOT NULL
+);
