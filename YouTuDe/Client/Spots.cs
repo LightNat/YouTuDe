@@ -514,5 +514,15 @@ namespace YouTuDe.Client
 
             lblnorthern.Visible = false;
         }
+
+        private void btnchecksouthern_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(ClientViewSpotsSouthernUserControl.result, "Southern Cebu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnchecknorthern_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(ClientViewSpotsNorthernUserControl.result, "Northern Cebu", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

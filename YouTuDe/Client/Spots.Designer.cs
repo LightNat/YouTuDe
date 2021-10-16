@@ -48,13 +48,13 @@ namespace YouTuDe.Client
             this.flowLayoutPanelSpotsSouthern = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanelSpotsNorthern = new System.Windows.Forms.FlowLayoutPanel();
             this.btnsavesouthern = new System.Windows.Forms.Button();
-            this.btnsouthern = new System.Windows.Forms.Button();
             this.btnnorthern = new System.Windows.Forms.Button();
+            this.btnchecksouthern = new System.Windows.Forms.Button();
+            this.btnchecknorthern = new System.Windows.Forms.Button();
+            this.btnsouthern = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblsouthern = new System.Windows.Forms.Label();
             this.lblnorthern = new System.Windows.Forms.Label();
-            this.btnchecknorthern = new System.Windows.Forms.Button();
-            this.btnchecksouthern = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbprofile)).BeginInit();
             this.panel2.SuspendLayout();
@@ -209,9 +209,9 @@ namespace YouTuDe.Client
             this.panel3.Controls.Add(this.flowLayoutPanelSpotsNorthern);
             this.panel3.Controls.Add(this.btnsavesouthern);
             this.panel3.Controls.Add(this.btnnorthern);
-            this.panel3.Controls.Add(this.btnchecksouthern);
             this.panel3.Controls.Add(this.btnchecknorthern);
             this.panel3.Controls.Add(this.btnsouthern);
+            this.panel3.Controls.Add(this.btnchecksouthern);
             this.panel3.Location = new System.Drawing.Point(5, 5);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(353, 223);
@@ -297,18 +297,6 @@ namespace YouTuDe.Client
             this.btnsavesouthern.UseVisualStyleBackColor = true;
             this.btnsavesouthern.Visible = false;
             // 
-            // btnsouthern
-            // 
-            this.btnsouthern.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnsouthern.Location = new System.Drawing.Point(5, 197);
-            this.btnsouthern.Name = "btnsouthern";
-            this.btnsouthern.Size = new System.Drawing.Size(41, 23);
-            this.btnsouthern.TabIndex = 8;
-            this.btnsouthern.Text = "←";
-            this.btnsouthern.UseVisualStyleBackColor = true;
-            this.btnsouthern.Visible = false;
-            this.btnsouthern.Click += new System.EventHandler(this.btnsouthern_Click);
-            // 
             // btnnorthern
             // 
             this.btnnorthern.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -320,6 +308,41 @@ namespace YouTuDe.Client
             this.btnnorthern.UseVisualStyleBackColor = true;
             this.btnnorthern.Visible = false;
             this.btnnorthern.Click += new System.EventHandler(this.btnnorthern_Click);
+            // 
+            // btnchecksouthern
+            // 
+            this.btnchecksouthern.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnchecksouthern.Location = new System.Drawing.Point(252, 197);
+            this.btnchecksouthern.Name = "btnchecksouthern";
+            this.btnchecksouthern.Size = new System.Drawing.Size(48, 23);
+            this.btnchecksouthern.TabIndex = 15;
+            this.btnchecksouthern.Text = "Check";
+            this.btnchecksouthern.UseVisualStyleBackColor = true;
+            this.btnchecksouthern.Visible = false;
+            this.btnchecksouthern.Click += new System.EventHandler(this.btnchecksouthern_Click);
+            // 
+            // btnchecknorthern
+            // 
+            this.btnchecknorthern.Location = new System.Drawing.Point(252, 197);
+            this.btnchecknorthern.Name = "btnchecknorthern";
+            this.btnchecknorthern.Size = new System.Drawing.Size(48, 23);
+            this.btnchecknorthern.TabIndex = 14;
+            this.btnchecknorthern.Text = "Check";
+            this.btnchecknorthern.UseVisualStyleBackColor = true;
+            this.btnchecknorthern.Visible = false;
+            this.btnchecknorthern.Click += new System.EventHandler(this.btnchecknorthern_Click);
+            // 
+            // btnsouthern
+            // 
+            this.btnsouthern.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnsouthern.Location = new System.Drawing.Point(5, 197);
+            this.btnsouthern.Name = "btnsouthern";
+            this.btnsouthern.Size = new System.Drawing.Size(41, 23);
+            this.btnsouthern.TabIndex = 8;
+            this.btnsouthern.Text = "←";
+            this.btnsouthern.UseVisualStyleBackColor = true;
+            this.btnsouthern.Visible = false;
+            this.btnsouthern.Click += new System.EventHandler(this.btnsouthern_Click);
             // 
             // label1
             // 
@@ -354,27 +377,6 @@ namespace YouTuDe.Client
             this.lblnorthern.TabIndex = 4;
             this.lblnorthern.Text = "Northern Cebu";
             this.lblnorthern.Visible = false;
-            // 
-            // btnchecknorthern
-            // 
-            this.btnchecknorthern.Location = new System.Drawing.Point(252, 197);
-            this.btnchecknorthern.Name = "btnchecknorthern";
-            this.btnchecknorthern.Size = new System.Drawing.Size(48, 23);
-            this.btnchecknorthern.TabIndex = 14;
-            this.btnchecknorthern.Text = "Check";
-            this.btnchecknorthern.UseVisualStyleBackColor = true;
-            this.btnchecknorthern.Visible = false;
-            // 
-            // btnchecksouthern
-            // 
-            this.btnchecksouthern.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnchecksouthern.Location = new System.Drawing.Point(252, 197);
-            this.btnchecksouthern.Name = "btnchecksouthern";
-            this.btnchecksouthern.Size = new System.Drawing.Size(48, 23);
-            this.btnchecksouthern.TabIndex = 15;
-            this.btnchecksouthern.Text = "Check";
-            this.btnchecksouthern.UseVisualStyleBackColor = true;
-            this.btnchecksouthern.Visible = false;
             // 
             // Spots
             // 

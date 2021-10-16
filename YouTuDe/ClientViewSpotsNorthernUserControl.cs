@@ -36,6 +36,8 @@ namespace YouTuDe
         public static string spots;
         public static string concatSpots;
         public static int spotsCount = 0;
+
+        public static string result;
         
 
         public ClientViewSpotsNorthernUserControl()
@@ -84,15 +86,17 @@ namespace YouTuDe
             total = (Client.Spots.totalNorthern += convertedMoney).ToString();
             spotsCount++;
             
-            MessageBox.Show(""+spotsCount);
+            //MessageBox.Show(""+spotsCount);
 
             concatSpots = (Client.Spots.attractionNorthern += (touristAttractionUpdate + ", "));
             spots = concatSpots.Substring(0, concatSpots.Length - 2);
 
             this.Visible = false;
 
-            MessageBox.Show(spots);
-            MessageBox.Show(""+total);
+            //MessageBox.Show(spots);
+            //MessageBox.Show(""+total);
+
+            result = "Spots Count: "+spotsCount.ToString() + "\n" + "Attractions: "+spots + "\n" + "Total Cost: Php "+total.ToString();
         }
 
     }
