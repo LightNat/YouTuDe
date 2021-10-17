@@ -524,5 +524,15 @@ namespace YouTuDe.Client
         {
             MessageBox.Show(ClientViewSpotsNorthernUserControl.result, "Northern Cebu", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void btnsavesouthern_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnsavenorthern_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

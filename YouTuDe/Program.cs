@@ -33,7 +33,7 @@ namespace YouTuDe
                 {
                     Function.Function.reader.Read();
 
-                    Application.Run(new Login());
+                    //Application.Run(new Login());
                 }
                 else
                 {

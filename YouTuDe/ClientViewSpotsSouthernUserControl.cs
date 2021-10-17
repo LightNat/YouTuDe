@@ -38,6 +38,9 @@ namespace YouTuDe
         public static int spotsCount = 0;
 
         public static string result;
+        public static string[] attraction;
+        public static string[] destination;
+        public static string[] cost;
 
 
         public ClientViewSpotsSouthernUserControl()
@@ -97,6 +100,12 @@ namespace YouTuDe
             //MessageBox.Show(""+total);
 
             result = "Spots Count: " + spotsCount.ToString() + "\n" + "Attractions: " + spots + "\n" + "Total Cost: Php " + total.ToString();
+
+            for (int i = 0; i < spotsCount; i++)
+            {
+                //attraction[i] = Client.Spots.attractionSouthern;
+            }
+            //MessageBox.Show(attraction[spotsCount]);
         }
 
     }
