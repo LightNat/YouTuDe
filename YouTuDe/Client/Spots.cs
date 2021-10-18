@@ -527,7 +527,8 @@ namespace YouTuDe.Client
 
         private void btnsavesouthern_Click(object sender, EventArgs e)
         {
-
+            //Console.WriteLine(ClientViewSpotsSouthernUserControl.displayAttraction + "\n" + ClientViewSpotsSouthernUserControl.displayDestination + "\n" + ClientViewSpotsSouthernUserControl.displayCost);
+         
         }
 
         private void btnsavenorthern_Click(object sender, EventArgs e)

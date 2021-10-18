@@ -60,7 +60,7 @@ namespace YouTuDe
             {
                 
                 Connection.Connection.DB();
-                Function.Function.gen = "INSERT INTO users(firstname, lastname, age, license, profile, userNumber, username, password, rolename) VALUES('"+firstname+"', '"+lastname+"', '"+age+"', '"+license+"', '"+Profile+"', '"+number+"', '"+Username+"', '"+Password+"', '"+Rolename+"') ";
+                Function.Function.gen = "INSERT INTO users(firstname, lastname, age, license, profile, userNumber, username, password, rolename, userMoney) VALUES('"+firstname+"', '"+lastname+"', '"+age+"', '"+license+"', '"+Profile+"', '"+number+"', '"+Username+"', '"+Password+"', '"+Rolename+"', '"+0.00+"') ";
                 Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.conn);
                 Function.Function.command.ExecuteNonQuery();
 

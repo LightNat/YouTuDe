@@ -47,7 +47,7 @@ namespace YouTuDe.IfNoUsers
             try
             {
                 Connection.Connection.DB();
-                Function.Function.gen = "INSERT INTO users(userNumber, username, password, rolename) VALUES(('+' + '"+txtadminnumber.Text+"'), 'Admin', 'Admin', 'Manager' ) ";
+                Function.Function.gen = "INSERT INTO users(userNumber, username, password, rolename, userMoney) VALUES(('+' + '"+txtadminnumber.Text+"'), 'Admin', 'Admin', 'Manager', '"+0.00+"' ) ";
                 Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.conn);
                 Function.Function.command.ExecuteNonQuery();
 

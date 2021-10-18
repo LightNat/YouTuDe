@@ -113,7 +113,7 @@ namespace YouTuDe.Account
                             try
                             {
                                 Connection.Connection.DB();
-                                Function.Function.gen = "INSERT INTO users(firstname, lastname, age, profile, userNumber, username, password, rolename) VALUES('"+txtfirstname.Text+"', '"+txtlastname.Text+"', '"+txtage.Text+"', '"+profile+"', ('+' + '"+txtphonenumber.Text+"'), '"+txtusername.Text+"', '"+txtpassword.Text+"', '"+rolename+"') ";
+                                Function.Function.gen = "INSERT INTO users(firstname, lastname, age, profile, userNumber, username, password, rolename, userMoney) VALUES('"+txtfirstname.Text+"', '"+txtlastname.Text+"', '"+txtage.Text+"', '"+profile+"', ('+' + '"+txtphonenumber.Text+"'), '"+txtusername.Text+"', '"+txtpassword.Text+"', '"+rolename+"', '"+0.00+"') ";
                                 Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.conn);
                                 Function.Function.command.ExecuteNonQuery();
 
