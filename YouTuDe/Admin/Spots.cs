@@ -174,7 +174,7 @@ namespace YouTuDe.Admin
                 {
                     Function.Function.reader.Read();
 
-                    profile = Function.Function.reader.GetValue(7).ToString();
+                    profile = Function.Function.reader.GetValue(8).ToString();
 
                     try
                     {

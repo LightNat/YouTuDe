@@ -17,6 +17,15 @@ namespace YouTuDe.Admin
         private int id;
         private string profile;
 
+        //Admin Image
+        private string imageFile;
+        private string fileImage;
+
+        //Admin Variables
+        private string profileUpdate;
+        private string updateProfile;
+        private bool change = false;
+
         //for string count
         int count;
         string name;
@@ -132,7 +141,7 @@ namespace YouTuDe.Admin
                 {
                     Function.Function.reader.Read();
 
-                    profile = Function.Function.reader.GetValue(7).ToString();
+                    profile = Function.Function.reader.GetValue(8).ToString();
 
                     try
                     {
@@ -325,6 +334,47 @@ namespace YouTuDe.Admin
             txtphonenumber.Enabled = false;
             txtusername.Enabled = false;
             txtpassword.Enabled = false;
+
+            if (change == false)
+            {
+                imageFile = profileUpdate;
+            }
+            else
+            {
+                imageFile = fileImage;
+            }
+
+            var file = Path.GetFileName(imageFile);
+            updateProfile = file;
+
+            try
+            {
+                Connection.Connection.DB();
+                Function.Function.gen = "UPDATE users SET firstname = '"+txtfirstname.Text+"', lastname = '"+txtlastname.Text+"', age = '"+txtage.Text+"', accountSid = '"+txtaccountsid.Text+"', authToken = '"+txtauthtoken.Text+"', accountNumber = '"+txtaccnum.Text+"', profile = '"+updateProfile+"', userNumber = '"+txtphonenumber.Text+"', username = '"+txtusername.Text+"', password = '"+txtpassword.Text+"' WHERE userid = '"+id+"' ";
+                Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.conn);
+                Function.Function.command.ExecuteNonQuery();
+
+                try
+                {
+                    File.Copy(imageFile, Path.Combine(Path.GetDirectoryName(Application.ExecutablePath) + "\\Profile", updateProfile));
+                }
+                catch (Exception ex)
+                {
+                    //Do Nothing
+                }
+
+                MessageBox.Show("Info updated Successfully!", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Admin.Status status = new Admin.Status();
+                this.Visible = false;
+                status.Show();
+
+                Connection.Connection.conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnedit_Click(object sender, EventArgs e)
@@ -363,14 +413,32 @@ namespace YouTuDe.Admin
                     txtaccountsid.Text = Function.Function.reader.GetValue(5).ToString();
                     txtauthtoken.Text = Function.Function.reader.GetValue(6).ToString();
                     txtaccnum.Text = Function.Function.reader.GetValue(7).ToString();
+                    profileUpdate = Function.Function.reader.GetValue(8).ToString();
                     txtphonenumber.Text = Function.Function.reader.GetValue(9).ToString();
                     txtusername.Text = Function.Function.reader.GetValue(10).ToString();
                     txtpassword.Text = Function.Function.reader.GetValue(11).ToString();
+
+                    var image = Path.GetDirectoryName(Application.ExecutablePath) + "\\Profile\\" + profileUpdate;
+                    pbimage.Image = Image.FromFile(image);
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnchoose_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog open = new OpenFileDialog();
+            open.Filter = "Image Files(*.jpg; *.jpeg; *.gif; *.bmp;) | *.jpg; *.jpeg; *.gif; *.bmp;";
+
+            if (open.ShowDialog() == DialogResult.OK)
+            {
+                fileImage = open.FileName;
+                imageFile = fileImage;
+                pbimage.Image = new Bitmap(imageFile);
+                change = true;
             }
         }
     }

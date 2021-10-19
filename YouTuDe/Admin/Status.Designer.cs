@@ -370,6 +370,7 @@ namespace YouTuDe.Admin
             this.btnchoose.TabIndex = 25;
             this.btnchoose.Text = "Choose File:";
             this.btnchoose.UseVisualStyleBackColor = true;
+            this.btnchoose.Click += new System.EventHandler(this.btnchoose_Click);
             // 
             // txtaccnum
             // 

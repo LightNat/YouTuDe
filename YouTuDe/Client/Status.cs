@@ -335,6 +335,8 @@ namespace YouTuDe.Client
                     //Do Nothing
                 }
 
+                MessageBox.Show("Info updated Successfully!", "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 Client.Status status = new Client.Status();
                 this.Visible = false;
                 status.Show();
