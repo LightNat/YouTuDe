@@ -44,9 +44,39 @@ namespace YouTuDe.Admin
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btnedit = new System.Windows.Forms.Button();
+            this.btnupdate = new System.Windows.Forms.Button();
+            this.btnchoose = new System.Windows.Forms.Button();
+            this.txtaccnum = new System.Windows.Forms.TextBox();
+            this.txtauthtoken = new System.Windows.Forms.TextBox();
+            this.txtaccountsid = new System.Windows.Forms.TextBox();
+            this.txtpassword = new System.Windows.Forms.TextBox();
+            this.txtusername = new System.Windows.Forms.TextBox();
+            this.txtphonenumber = new System.Windows.Forms.TextBox();
+            this.txtage = new System.Windows.Forms.TextBox();
+            this.txtlastname = new System.Windows.Forms.TextBox();
+            this.txtfirstname = new System.Windows.Forms.TextBox();
+            this.pbimage = new System.Windows.Forms.PictureBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbprofile)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbimage)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -244,10 +274,293 @@ namespace YouTuDe.Admin
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.tabControl1);
             this.panel3.Location = new System.Drawing.Point(5, 5);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(353, 313);
             this.panel3.TabIndex = 0;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(358, 319);
+            this.tabControl1.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(350, 290);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Status";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage2.Controls.Add(this.btnedit);
+            this.tabPage2.Controls.Add(this.btnupdate);
+            this.tabPage2.Controls.Add(this.btnchoose);
+            this.tabPage2.Controls.Add(this.txtaccnum);
+            this.tabPage2.Controls.Add(this.txtauthtoken);
+            this.tabPage2.Controls.Add(this.txtaccountsid);
+            this.tabPage2.Controls.Add(this.txtpassword);
+            this.tabPage2.Controls.Add(this.txtusername);
+            this.tabPage2.Controls.Add(this.txtphonenumber);
+            this.tabPage2.Controls.Add(this.txtage);
+            this.tabPage2.Controls.Add(this.txtlastname);
+            this.tabPage2.Controls.Add(this.txtfirstname);
+            this.tabPage2.Controls.Add(this.pbimage);
+            this.tabPage2.Controls.Add(this.label12);
+            this.tabPage2.Controls.Add(this.label11);
+            this.tabPage2.Controls.Add(this.label10);
+            this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.label8);
+            this.tabPage2.Controls.Add(this.label7);
+            this.tabPage2.Controls.Add(this.label6);
+            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.label4);
+            this.tabPage2.Controls.Add(this.label3);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(350, 290);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Settings";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btnedit
+            // 
+            this.btnedit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnedit.Location = new System.Drawing.Point(217, 262);
+            this.btnedit.Name = "btnedit";
+            this.btnedit.Size = new System.Drawing.Size(61, 20);
+            this.btnedit.TabIndex = 27;
+            this.btnedit.Text = "EDIT";
+            this.btnedit.UseVisualStyleBackColor = true;
+            this.btnedit.Click += new System.EventHandler(this.btnedit_Click);
+            // 
+            // btnupdate
+            // 
+            this.btnupdate.Enabled = false;
+            this.btnupdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnupdate.Location = new System.Drawing.Point(284, 262);
+            this.btnupdate.Name = "btnupdate";
+            this.btnupdate.Size = new System.Drawing.Size(61, 20);
+            this.btnupdate.TabIndex = 26;
+            this.btnupdate.Text = "UPDATE";
+            this.btnupdate.UseVisualStyleBackColor = true;
+            this.btnupdate.Click += new System.EventHandler(this.btnupdate_Click);
+            // 
+            // btnchoose
+            // 
+            this.btnchoose.Enabled = false;
+            this.btnchoose.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnchoose.Location = new System.Drawing.Point(265, 225);
+            this.btnchoose.Name = "btnchoose";
+            this.btnchoose.Size = new System.Drawing.Size(66, 21);
+            this.btnchoose.TabIndex = 25;
+            this.btnchoose.Text = "Choose File:";
+            this.btnchoose.UseVisualStyleBackColor = true;
+            // 
+            // txtaccnum
+            // 
+            this.txtaccnum.Enabled = false;
+            this.txtaccnum.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtaccnum.Location = new System.Drawing.Point(31, 233);
+            this.txtaccnum.Name = "txtaccnum";
+            this.txtaccnum.Size = new System.Drawing.Size(129, 20);
+            this.txtaccnum.TabIndex = 24;
+            // 
+            // txtauthtoken
+            // 
+            this.txtauthtoken.Enabled = false;
+            this.txtauthtoken.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtauthtoken.Location = new System.Drawing.Point(31, 190);
+            this.txtauthtoken.Name = "txtauthtoken";
+            this.txtauthtoken.Size = new System.Drawing.Size(129, 20);
+            this.txtauthtoken.TabIndex = 23;
+            // 
+            // txtaccountsid
+            // 
+            this.txtaccountsid.Enabled = false;
+            this.txtaccountsid.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtaccountsid.Location = new System.Drawing.Point(31, 147);
+            this.txtaccountsid.Name = "txtaccountsid";
+            this.txtaccountsid.Size = new System.Drawing.Size(129, 20);
+            this.txtaccountsid.TabIndex = 22;
+            // 
+            // txtpassword
+            // 
+            this.txtpassword.Enabled = false;
+            this.txtpassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpassword.Location = new System.Drawing.Point(202, 104);
+            this.txtpassword.Name = "txtpassword";
+            this.txtpassword.Size = new System.Drawing.Size(129, 20);
+            this.txtpassword.TabIndex = 21;
+            // 
+            // txtusername
+            // 
+            this.txtusername.Enabled = false;
+            this.txtusername.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtusername.Location = new System.Drawing.Point(202, 65);
+            this.txtusername.Name = "txtusername";
+            this.txtusername.Size = new System.Drawing.Size(129, 20);
+            this.txtusername.TabIndex = 20;
+            // 
+            // txtphonenumber
+            // 
+            this.txtphonenumber.Enabled = false;
+            this.txtphonenumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtphonenumber.Location = new System.Drawing.Point(202, 22);
+            this.txtphonenumber.Name = "txtphonenumber";
+            this.txtphonenumber.Size = new System.Drawing.Size(129, 20);
+            this.txtphonenumber.TabIndex = 19;
+            // 
+            // txtage
+            // 
+            this.txtage.Enabled = false;
+            this.txtage.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtage.Location = new System.Drawing.Point(31, 104);
+            this.txtage.Name = "txtage";
+            this.txtage.Size = new System.Drawing.Size(56, 20);
+            this.txtage.TabIndex = 18;
+            // 
+            // txtlastname
+            // 
+            this.txtlastname.Enabled = false;
+            this.txtlastname.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtlastname.Location = new System.Drawing.Point(31, 65);
+            this.txtlastname.Name = "txtlastname";
+            this.txtlastname.Size = new System.Drawing.Size(129, 20);
+            this.txtlastname.TabIndex = 17;
+            // 
+            // txtfirstname
+            // 
+            this.txtfirstname.Enabled = false;
+            this.txtfirstname.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtfirstname.Location = new System.Drawing.Point(31, 22);
+            this.txtfirstname.Name = "txtfirstname";
+            this.txtfirstname.Size = new System.Drawing.Size(129, 20);
+            this.txtfirstname.TabIndex = 16;
+            // 
+            // pbimage
+            // 
+            this.pbimage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbimage.Location = new System.Drawing.Point(198, 147);
+            this.pbimage.Name = "pbimage";
+            this.pbimage.Size = new System.Drawing.Size(96, 72);
+            this.pbimage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbimage.TabIndex = 15;
+            this.pbimage.TabStop = false;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(161, 49);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(67, 13);
+            this.label12.TabIndex = 10;
+            this.label12.Text = "Username:";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(6, 174);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(77, 13);
+            this.label11.TabIndex = 9;
+            this.label11.Text = "Auth Token:";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(161, 88);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(65, 13);
+            this.label10.TabIndex = 8;
+            this.label10.Text = "Password:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(8, 217);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(62, 13);
+            this.label9.TabIndex = 7;
+            this.label9.Text = "Acc Num:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(6, 131);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(83, 13);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "Account SID:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(161, 131);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 13);
+            this.label7.TabIndex = 5;
+            this.label7.Text = "Profile:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(161, 6);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(94, 13);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Phone Number:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(5, 88);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(33, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Age:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(5, 49);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Lastname:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(5, 6);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(65, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Firstname:";
             // 
             // Status
             // 
@@ -267,6 +580,11 @@ namespace YouTuDe.Admin
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbprofile)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbimage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,5 +607,31 @@ namespace YouTuDe.Admin
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.PictureBox pbimage;
+        private System.Windows.Forms.TextBox txtfirstname;
+        private System.Windows.Forms.TextBox txtage;
+        private System.Windows.Forms.TextBox txtlastname;
+        private System.Windows.Forms.TextBox txtphonenumber;
+        private System.Windows.Forms.TextBox txtusername;
+        private System.Windows.Forms.TextBox txtaccnum;
+        private System.Windows.Forms.TextBox txtauthtoken;
+        private System.Windows.Forms.TextBox txtaccountsid;
+        private System.Windows.Forms.TextBox txtpassword;
+        private System.Windows.Forms.Button btnchoose;
+        private System.Windows.Forms.Button btnedit;
+        private System.Windows.Forms.Button btnupdate;
     }
 }

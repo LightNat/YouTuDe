@@ -35,6 +35,8 @@ namespace YouTuDe.Admin
             Allignment();
 
             lblfullname.Text = Login.firstname + " " + Login.lastname;
+
+            GenerateDetails();
         }
 
         public void Allignment()
@@ -306,6 +308,70 @@ namespace YouTuDe.Admin
         {
             btnLogout.BackColor = Color.FromArgb(28, 33, 32);
             btnLogout.ForeColor = Color.FromArgb(255, 222, 89);
+        }
+
+        private void btnupdate_Click(object sender, EventArgs e)
+        {
+            btnupdate.Enabled = false;
+            btnedit.Enabled = true;
+            btnchoose.Enabled = false;
+
+            txtfirstname.Enabled = false;
+            txtlastname.Enabled = false;
+            txtage.Enabled = false;
+            txtaccountsid.Enabled = false;
+            txtauthtoken.Enabled = false;
+            txtaccnum.Enabled = false;
+            txtphonenumber.Enabled = false;
+            txtusername.Enabled = false;
+            txtpassword.Enabled = false;
+        }
+
+        private void btnedit_Click(object sender, EventArgs e)
+        {
+            btnupdate.Enabled = true;
+            btnedit.Enabled = false;
+            btnchoose.Enabled = true;
+
+            txtfirstname.Enabled = true;
+            txtlastname.Enabled = true;
+            txtage.Enabled = true;
+            txtaccountsid.Enabled = true;
+            txtauthtoken.Enabled = true;
+            txtaccnum.Enabled = true;
+            txtphonenumber.Enabled = true;
+            txtusername.Enabled = false;
+            txtpassword.Enabled = true;
+        }
+
+        public void GenerateDetails()
+        {
+            try
+            {
+                Connection.Connection.DB();
+                Function.Function.gen = "SELECT * FROM users WHERE userid = '" + id + "' ";
+                Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.conn);
+                Function.Function.reader = Function.Function.command.ExecuteReader();
+
+                if (Function.Function.reader.HasRows)
+                {
+                    Function.Function.reader.Read();
+
+                    txtfirstname.Text = Function.Function.reader.GetValue(1).ToString();
+                    txtlastname.Text = Function.Function.reader.GetValue(2).ToString();
+                    txtage.Text = Function.Function.reader.GetValue(3).ToString();
+                    txtaccountsid.Text = Function.Function.reader.GetValue(5).ToString();
+                    txtauthtoken.Text = Function.Function.reader.GetValue(6).ToString();
+                    txtaccnum.Text = Function.Function.reader.GetValue(7).ToString();
+                    txtphonenumber.Text = Function.Function.reader.GetValue(9).ToString();
+                    txtusername.Text = Function.Function.reader.GetValue(10).ToString();
+                    txtpassword.Text = Function.Function.reader.GetValue(11).ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
