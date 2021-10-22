@@ -101,7 +101,9 @@ namespace YouTuDe
                         }
                         else if (rolename == "Driver")
                         {
-                            MessageBox.Show("Driver");
+                            Driver.Dashboard dashboard = new Driver.Dashboard();
+                            this.Visible = false;
+                            dashboard.Show();
                         }
                         else
                         {
