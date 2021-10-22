@@ -29,6 +29,7 @@ namespace YouTuDe.Driver
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pbprofile = new System.Windows.Forms.PictureBox();
             this.lblfullname = new System.Windows.Forms.Label();
@@ -194,7 +195,7 @@ namespace YouTuDe.Driver
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Dashboard";
+            this.Text = resources.GetString("$this.Text");
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
