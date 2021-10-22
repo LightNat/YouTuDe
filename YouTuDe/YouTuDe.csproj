@@ -143,6 +143,24 @@
     <Compile Include="DriverUserControl.Designer.cs">
       <DependentUpon>DriverUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Driver\Status.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Driver\Status.Designer.cs">
+      <DependentUpon>Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Driver\Pending.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Driver\Pending.Designer.cs">
+      <DependentUpon>Pending.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Driver\Request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Driver\Request.Designer.cs">
+      <DependentUpon>Request.cs</DependentUpon>
+    </Compile>
     <Compile Include="Driver\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +259,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DriverUserControl.resx">
       <DependentUpon>DriverUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Driver\Status.resx">
+      <DependentUpon>Status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Driver\Pending.resx">
+      <DependentUpon>Pending.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Driver\Request.resx">
+      <DependentUpon>Request.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Driver\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
