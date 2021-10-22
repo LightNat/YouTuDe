@@ -144,5 +144,46 @@ namespace YouTuDe.Driver
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btnDashboard_Click(object sender, EventArgs e)
+        {
+            Driver.Dashboard dashboard = new Driver.Dashboard();
+            this.Visible = false;
+            dashboard.Show();
+        }
+
+        private void btnRequest_Click(object sender, EventArgs e)
+        {
+            Driver.Request request = new Driver.Request();
+            this.Visible = false;
+            request.Show();
+        }
+
+        private void btnPending_Click(object sender, EventArgs e)
+        {
+            Driver.Pending pending = new Driver.Pending();
+            this.Visible = false;
+            pending.Show();
+        }
+
+        private void btnStatus_Click(object sender, EventArgs e)
+        {
+            Driver.Status status = new Driver.Status();
+            this.Visible = false;
+            status.Show();
+        }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            string text = "Do you wish to log out?";
+            string caption = "Logout";
+            DialogResult result = MessageBox.Show(text, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Login login = new Login();
+                this.Visible = false;
+                login.Show();
+            }
+        }
     }
 }
