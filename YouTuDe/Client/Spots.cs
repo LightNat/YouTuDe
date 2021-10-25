@@ -34,6 +34,7 @@ namespace YouTuDe.Client
 
         public static double totalSouthern;
         public static string attractionSouthern;
+        public static string totalSouthernString = totalSouthern.ToString();
 
         public static double totalNorthern;
         public static string attractionNorthern;
@@ -527,13 +528,37 @@ namespace YouTuDe.Client
 
         private void btnsavesouthern_Click(object sender, EventArgs e)
         {
-            //Console.WriteLine(ClientViewSpotsSouthernUserControl.displayAttraction + "\n" + ClientViewSpotsSouthernUserControl.displayDestination + "\n" + ClientViewSpotsSouthernUserControl.displayCost);
-         
+            Console.WriteLine();
+            for (int i = 0; i < ClientViewSpotsSouthernUserControl.sample.Length; i++)
+            {
+                Console.Write(ClientViewSpotsSouthernUserControl.sample[i]);
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+            for (int j = 0; j < ClientViewSpotsSouthernUserControl.attractions.Length; j++)
+            {
+                Console.WriteLine(ClientViewSpotsSouthernUserControl.attractions[j]);
+                Console.WriteLine(ClientViewSpotsSouthernUserControl.cost[j]);
+            }
+            Console.WriteLine();
         }
 
         private void btnsavenorthern_Click(object sender, EventArgs e)
         {
 
+            Console.WriteLine();
+            for (int i = 0; i < ClientViewSpotsNorthernUserControl.sample.Length; i++)
+            {
+                Console.Write(ClientViewSpotsNorthernUserControl.sample[i]);
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+            for (int j = 0; j < ClientViewSpotsNorthernUserControl.attractions.Length; j++)
+            {
+                Console.WriteLine(ClientViewSpotsNorthernUserControl.attractions[j]);
+                Console.WriteLine(ClientViewSpotsNorthernUserControl.cost[j]);
+            }
+            Console.WriteLine();
         }
     }
 }

@@ -30,7 +30,10 @@ namespace YouTuDe
         public static string attractionDescriptionUpdate;
 
         public static double money;
+        public static string moneyString;
         public static double convertedMoney;
+        public static string concatMoney;
+        public static string totalMoney;
 
         public static string total;
         public static string spots;
@@ -38,6 +41,11 @@ namespace YouTuDe
         public static int spotsCount = 0;
 
         public static string result;
+
+        public static string[] attractions = new string[100];
+        public static string[] cost = new string[100];
+
+        public static string[] sample = new string[]{"sample", "ko", "lang"};
 
 
         public ClientViewSpotsSouthernUserControl()
@@ -82,21 +90,24 @@ namespace YouTuDe
 
             money = Convert.ToDouble(attractionCostUpdate);
             convertedMoney = Convert.ToDouble(String.Format("{0:00.00}", money));
+            moneyString = convertedMoney.ToString();
 
             total = (Client.Spots.totalSouthern += convertedMoney).ToString();
-            spotsCount++;
-            
-            //MessageBox.Show(""+spotsCount);
+            totalMoney = (Client.Spots.totalSouthernString += moneyString + ",");
+            concatMoney = totalMoney.Substring(0, totalMoney.Length - 1);
 
-            concatSpots = (Client.Spots.attractionSouthern += (touristAttractionUpdate + ", "));
-            spots = concatSpots.Substring(0, concatSpots.Length - 2);
+            spotsCount++;
+
+            concatSpots = (Client.Spots.attractionSouthern += (touristAttractionUpdate + ","));
+            spots = concatSpots.Substring(0, concatSpots.Length - 1);
 
             this.Visible = false;
 
-            //MessageBox.Show(spots);
-            //MessageBox.Show(""+total);
-
             result = "Spots Count: " + spotsCount.ToString() + "\n" + "Attractions: " + spots + "\n" + "Total Cost: Php " + total.ToString();
+
+            attractions = spots.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+            cost = concatMoney.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+
         }
 
     }
