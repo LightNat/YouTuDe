@@ -93,7 +93,7 @@ namespace YouTuDe
             moneyString = convertedMoney.ToString();
 
             total = (Client.Spots.totalNorthern += convertedMoney).ToString();
-            totalMoney = (Client.Spots.totalSouthernString += moneyString + ",");
+            totalMoney = (Client.Spots.totalNorthernString += moneyString + ",");
             concatMoney = totalMoney.Substring(0, totalMoney.Length - 1);
 
             spotsCount++;

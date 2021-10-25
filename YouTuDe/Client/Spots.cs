@@ -38,6 +38,7 @@ namespace YouTuDe.Client
 
         public static double totalNorthern;
         public static string attractionNorthern;
+        public static string totalNorthernString = totalNorthern.ToString();
 
         //Reset Southern
         public static int resetCountSouthern = 0;
