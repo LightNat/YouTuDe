@@ -98,8 +98,8 @@ namespace YouTuDe
 
             spotsCount++;
 
-            concatSpots = (Client.Spots.attractionNorthern += (touristAttractionUpdate + ", "));
-            spots = concatSpots.Substring(0, concatSpots.Length - 2);
+            concatSpots = (Client.Spots.attractionNorthern += (touristAttractionUpdate + ","));
+            spots = concatSpots.Substring(0, concatSpots.Length - 1);
 
             this.Visible = false;
 
