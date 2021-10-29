@@ -68,78 +68,11 @@ namespace YouTuDe.Admin
 
                     name = firstname + " " + lastname;
                     count = name.Length;
-
-                    if (count == 20)
+                    int x = 64;
+                    for (int i = 3; i < count; i++)
                     {
-                        this.lblfullname.Location = new Point(-4, 114);
-                    }
-                    else if (count == 19)
-                    {
-                        this.lblfullname.Location = new Point(0, 114);
-                    }
-                    else if (count == 18)
-                    {
-                        this.lblfullname.Location = new Point(4, 114);
-                    }
-                    else if (count == 17)
-                    {
-                        this.lblfullname.Location = new Point(8, 114);
-                    }
-                    else if (count == 16)
-                    {
-                        this.lblfullname.Location = new Point(12, 114);
-                    }
-                    else if (count == 15)
-                    {
-                        this.lblfullname.Location = new Point(16, 114);
-                    }
-                    else if (count == 14)
-                    {
-                        this.lblfullname.Location = new Point(20, 114);
-                    }
-                    else if (count == 13)
-                    {
-                        this.lblfullname.Location = new Point(24, 114);
-                    }
-                    else if (count == 12)
-                    {
-                        this.lblfullname.Location = new Point(28, 114);
-                    }
-                    else if (count == 11)
-                    {
-                        this.lblfullname.Location = new Point(32, 114);
-                    }
-                    else if (count == 10)
-                    {
-                        this.lblfullname.Location = new Point(36, 114);
-                    }
-                    else if (count == 9)
-                    {
-                        this.lblfullname.Location = new Point(40, 114);
-                    }
-                    else if (count == 8)
-                    {
-                        this.lblfullname.Location = new Point(44, 114);
-                    }
-                    else if (count == 7)
-                    {
-                        this.lblfullname.Location = new Point(48, 114);
-                    }
-                    else if (count == 6)
-                    {
-                        this.lblfullname.Location = new Point(52, 114);
-                    }
-                    else if (count == 5)
-                    {
-                        this.lblfullname.Location = new Point(56, 114);
-                    }
-                    else if (count == 4)
-                    {
-                        this.lblfullname.Location = new Point(60, 114);
-                    }
-                    else if (count == 3)
-                    {
-                        this.lblfullname.Location = new Point(64, 114);
+                        this.lblfullname.Location = new Point(x, 114);
+                        x -= 4;
                     }
                 }
             }
