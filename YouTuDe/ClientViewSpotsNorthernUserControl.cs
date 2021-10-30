@@ -40,12 +40,14 @@ namespace YouTuDe
         public static string concatSpots;
         public static int spotsCount = 0;
 
+        public static string destination;
+        public static string concatDestination;
+
         public static string result;
 
         public static string[] attractions = new string[100];
         public static string[] cost = new string[100];
-
-        public static string[] sample = new string[]{"sample", "ko", "lang"};
+        public static string[] desti = new string[100];
         
 
         public ClientViewSpotsNorthernUserControl()
@@ -101,12 +103,16 @@ namespace YouTuDe
             concatSpots = (Client.Spots.attractionNorthern += (touristAttractionUpdate + ","));
             spots = concatSpots.Substring(0, concatSpots.Length - 1);
 
+            destination = (Client.Spots.destinationNorthern += (touristDestinationUpdate + "|"));
+            concatDestination = destination.Substring(0, destination.Length - 1);
+
             this.Visible = false;
 
             result = "Spots Count: "+spotsCount.ToString() + "\n" + "Attractions: "+spots + "\n" + "Total Cost: Php "+total.ToString();
 
             attractions = spots.Split(new string[] {","}, StringSplitOptions.RemoveEmptyEntries);
-            cost = concatMoney.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+            cost = concatMoney.Split(new string[] {","}, StringSplitOptions.RemoveEmptyEntries);
+            desti = concatDestination.Split(new string[] {"|"}, StringSplitOptions.RemoveEmptyEntries);
 
         }
 

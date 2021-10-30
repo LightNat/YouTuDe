@@ -35,20 +35,24 @@ namespace YouTuDe.Client
         public static double totalSouthern;
         public static string attractionSouthern;
         public static string totalSouthernString = totalSouthern.ToString();
+        public static string destinationSouthern;
 
         public static double totalNorthern;
         public static string attractionNorthern;
         public static string totalNorthernString = totalNorthern.ToString();
+        public static string destinationNorthern;
 
         //Reset Southern
         public static int resetCountSouthern = 0;
         public static double resetTotalSouthern = 0.00;
         public static string resetSpotsSouthern = "";
+        public static string resetDestinationSouthern = "";
 
         //Reset Northern
         public static int resetCountNorthern = 0;
         public static double resetTotalNorthern = 0.00;
         public static string resetSpotsNorthern = "";
+        public static string resetDestinationNorthern = "";
 
         //for string count
         int count;
@@ -98,6 +102,7 @@ namespace YouTuDe.Client
             totalSouthern = resetCountSouthern;
             ClientViewSpotsSouthernUserControl.spotsCount = resetCountSouthern;
             attractionSouthern = resetSpotsSouthern;
+            destinationSouthern = resetDestinationSouthern;
         }
 
         public static void ResetNorthern()
@@ -105,6 +110,8 @@ namespace YouTuDe.Client
             totalNorthern = resetCountNorthern;
             ClientViewSpotsNorthernUserControl.spotsCount = resetCountNorthern;
             attractionNorthern = resetSpotsNorthern;
+            destinationNorthern = resetDestinationNorthern;
+
         }
 
         public void Allignment()
@@ -462,35 +469,22 @@ namespace YouTuDe.Client
 
         private void btnsavesouthern_Click(object sender, EventArgs e)
         {
-            Console.WriteLine();
-            for (int i = 0; i < ClientViewSpotsSouthernUserControl.sample.Length; i++)
-            {
-                Console.Write(ClientViewSpotsSouthernUserControl.sample[i]);
-            }
-            Console.WriteLine();
-            Console.WriteLine();
             for (int j = 0; j < ClientViewSpotsSouthernUserControl.attractions.Length; j++)
             {
                 Console.WriteLine(ClientViewSpotsSouthernUserControl.attractions[j]);
                 Console.WriteLine(ClientViewSpotsSouthernUserControl.cost[j]);
+                Console.WriteLine(ClientViewSpotsSouthernUserControl.desti[j]);
             }
             Console.WriteLine();
         }
 
         private void btnsavenorthern_Click(object sender, EventArgs e)
         {
-
-            Console.WriteLine();
-            for (int i = 0; i < ClientViewSpotsNorthernUserControl.sample.Length; i++)
-            {
-                Console.Write(ClientViewSpotsNorthernUserControl.sample[i]);
-            }
-            Console.WriteLine();
-            Console.WriteLine();
             for (int j = 0; j < ClientViewSpotsNorthernUserControl.attractions.Length; j++)
             {
                 Console.WriteLine(ClientViewSpotsNorthernUserControl.attractions[j]);
                 Console.WriteLine(ClientViewSpotsNorthernUserControl.cost[j]);
+                Console.WriteLine(ClientViewSpotsNorthernUserControl.desti[j]);
             }
             Console.WriteLine();
         }
