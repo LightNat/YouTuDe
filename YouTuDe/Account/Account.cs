@@ -91,6 +91,10 @@ namespace YouTuDe.Account
                 {
                     MessageBox.Show("Password must not be set as Null or Whitespace", "Null | Whitespace", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                else if (txtpassword.Text != txtpasswordagain.Text)
+                {
+                    MessageBox.Show("Password Not Match", "Not Match", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
                 else if (String.IsNullOrWhiteSpace(txtphonenumber.Text) == true)
                 {
                     MessageBox.Show("Phone Number must not be set as Null or Whitespace", "Null | Whitespace", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -156,8 +160,6 @@ namespace YouTuDe.Account
                                         Function.Function.gen = "INSERT INTO pendingDriver(firstname, lastname, age, license, profile, userNumber, username, password, rolename) VALUES('" + txtfirstname.Text + "', '" + txtlastname.Text + "', '" + txtage.Text + "', '"+lbllicense.Text+"', '" + profile + "', ('+' + '" + txtphonenumber.Text + "'), '" + txtusername.Text + "', '" + txtpassword.Text + "', '" + rolename + "') ";
                                         Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.conn);
                                         Function.Function.command.ExecuteNonQuery();
-
-
                                         try
                                         {
                                             File.Copy(imageFile, Path.Combine(Path.GetDirectoryName(Application.ExecutablePath) + "\\Profile", profile));
@@ -190,8 +192,6 @@ namespace YouTuDe.Account
                                         MessageBox.Show(ex.Message);
                                     }
                                 }
-
-                               
                             }
                             
                         }
@@ -230,6 +230,29 @@ namespace YouTuDe.Account
         private void rdbTourist_CheckedChanged(object sender, EventArgs e)
         {
             btnlicense.Enabled = false;
+        }
+
+        private void txtpasswordagain_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(txtpasswordagain.Text) == true)
+            {
+                lblstatus.Visible = false;
+            }
+            else
+            {
+                if (txtpasswordagain.Text == txtpassword.Text)
+                {
+                    lblstatus.Visible = true;
+                    lblstatus.Text = "✔";
+                    lblstatus.ForeColor = Color.Green;
+                }
+                else
+                {
+                    lblstatus.Visible = true;
+                    lblstatus.Text = "✖";
+                    lblstatus.ForeColor = Color.Red;
+                }
+            }
         }
     }
 }

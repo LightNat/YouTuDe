@@ -57,6 +57,9 @@ namespace YouTuDe.Account
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtpasswordagain = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblstatus = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -75,6 +78,9 @@ namespace YouTuDe.Account
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.lblstatus);
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.txtpasswordagain);
             this.panel2.Controls.Add(this.lbllicense);
             this.panel2.Controls.Add(this.btnlicense);
             this.panel2.Controls.Add(this.label11);
@@ -138,7 +144,7 @@ namespace YouTuDe.Account
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(270, 197);
+            this.label10.Location = new System.Drawing.Point(270, 224);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(85, 16);
             this.label10.TabIndex = 20;
@@ -148,7 +154,7 @@ namespace YouTuDe.Account
             // 
             this.groupBox1.Controls.Add(this.rdbDriver);
             this.groupBox1.Controls.Add(this.rdbTourist);
-            this.groupBox1.Location = new System.Drawing.Point(347, 216);
+            this.groupBox1.Location = new System.Drawing.Point(347, 243);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(130, 38);
             this.groupBox1.TabIndex = 19;
@@ -180,7 +186,7 @@ namespace YouTuDe.Account
             // 
             // txtphonenumber
             // 
-            this.txtphonenumber.Location = new System.Drawing.Point(363, 146);
+            this.txtphonenumber.Location = new System.Drawing.Point(363, 173);
             this.txtphonenumber.Name = "txtphonenumber";
             this.txtphonenumber.Size = new System.Drawing.Size(114, 20);
             this.txtphonenumber.TabIndex = 18;
@@ -189,6 +195,7 @@ namespace YouTuDe.Account
             // 
             this.txtpassword.Location = new System.Drawing.Point(363, 89);
             this.txtpassword.Name = "txtpassword";
+            this.txtpassword.PasswordChar = '*';
             this.txtpassword.Size = new System.Drawing.Size(114, 20);
             this.txtpassword.TabIndex = 17;
             // 
@@ -264,7 +271,7 @@ namespace YouTuDe.Account
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(341, 148);
+            this.label9.Location = new System.Drawing.Point(341, 175);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(16, 16);
             this.label9.TabIndex = 8;
@@ -274,7 +281,7 @@ namespace YouTuDe.Account
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(270, 123);
+            this.label8.Location = new System.Drawing.Point(270, 150);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(118, 16);
             this.label8.TabIndex = 7;
@@ -350,6 +357,37 @@ namespace YouTuDe.Account
             this.label1.TabIndex = 0;
             this.label1.Text = "REGISTRATION";
             // 
+            // txtpasswordagain
+            // 
+            this.txtpasswordagain.Location = new System.Drawing.Point(363, 115);
+            this.txtpasswordagain.Name = "txtpasswordagain";
+            this.txtpasswordagain.PasswordChar = '*';
+            this.txtpasswordagain.Size = new System.Drawing.Size(114, 20);
+            this.txtpasswordagain.TabIndex = 24;
+            this.txtpasswordagain.TextChanged += new System.EventHandler(this.txtpasswordagain_TextChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(206, 116);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(148, 16);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "Re-enter Password: ";
+            // 
+            // lblstatus
+            // 
+            this.lblstatus.AutoSize = true;
+            this.lblstatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblstatus.ForeColor = System.Drawing.Color.Green;
+            this.lblstatus.Location = new System.Drawing.Point(477, 119);
+            this.lblstatus.Name = "lblstatus";
+            this.lblstatus.Size = new System.Drawing.Size(20, 13);
+            this.lblstatus.TabIndex = 26;
+            this.lblstatus.Text = "✔";
+            this.lblstatus.Visible = false;
+            // 
             // Account
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -402,5 +440,8 @@ namespace YouTuDe.Account
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lbllicense;
         private System.Windows.Forms.Button btnlicense;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtpasswordagain;
+        private System.Windows.Forms.Label lblstatus;
     }
 }
