@@ -33,6 +33,7 @@ namespace YouTuDe.Client
         public static string totalUpdate;
 
         public static double totalSouthern;
+        public static string attractid;
         public static string attractionSouthern;
         public static string totalSouthernString = totalSouthern.ToString();
         public static string destinationSouthern;
@@ -45,6 +46,7 @@ namespace YouTuDe.Client
         //Reset Southern
         public static int resetCountSouthern = 0;
         public static double resetTotalSouthern = 0.00;
+        public static string resetAttractSouthern = "";
         public static string resetSpotsSouthern = "";
         public static string resetDestinationSouthern = "";
 
@@ -101,6 +103,7 @@ namespace YouTuDe.Client
         {
             totalSouthern = resetCountSouthern;
             ClientViewSpotsSouthernUserControl.spotsCount = resetCountSouthern;
+            attractid = resetAttractSouthern;
             attractionSouthern = resetSpotsSouthern;
             destinationSouthern = resetDestinationSouthern;
         }
@@ -471,6 +474,7 @@ namespace YouTuDe.Client
         {
             for (int j = 0; j < ClientViewSpotsSouthernUserControl.attractions.Length; j++)
             {
+                Console.WriteLine(ClientViewSpotsSouthernUserControl.attrid[j]);
                 Console.WriteLine(ClientViewSpotsSouthernUserControl.attractions[j]);
                 Console.WriteLine(ClientViewSpotsSouthernUserControl.cost[j]);
                 Console.WriteLine(ClientViewSpotsSouthernUserControl.desti[j]);
