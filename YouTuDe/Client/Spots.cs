@@ -37,12 +37,14 @@ namespace YouTuDe.Client
         public static string attractionSouthern;
         public static string totalSouthernString = totalSouthern.ToString();
         public static string destinationSouthern;
+        public static string categorySouthern;
 
         public static double totalNorthern;
         public static string attractidNorthern;
         public static string attractionNorthern;
         public static string totalNorthernString = totalNorthern.ToString();
         public static string destinationNorthern;
+        public static string categoryNorthern;
 
         //Reset Southern
         public static int resetCountSouthern = 0;
@@ -50,6 +52,7 @@ namespace YouTuDe.Client
         public static string resetAttractSouthern = "";
         public static string resetSpotsSouthern = "";
         public static string resetDestinationSouthern = "";
+        public static string resetCategorySouthern = "";
 
         //Reset Northern
         public static int resetCountNorthern = 0;
@@ -57,6 +60,7 @@ namespace YouTuDe.Client
         public static string resetAttractNorthern = "";
         public static string resetSpotsNorthern = "";
         public static string resetDestinationNorthern = "";
+        public static string resetCategoryNorthern = "";
 
         //for string count
         int count;
@@ -108,6 +112,7 @@ namespace YouTuDe.Client
             attractidSouthern = resetAttractSouthern;
             attractionSouthern = resetSpotsSouthern;
             destinationSouthern = resetDestinationSouthern;
+            categorySouthern = resetCategorySouthern;
         }
 
         public static void ResetNorthern()
@@ -117,7 +122,7 @@ namespace YouTuDe.Client
             attractidNorthern = resetAttractNorthern;
             attractionNorthern = resetSpotsNorthern;
             destinationNorthern = resetDestinationNorthern;
-
+            categoryNorthern = resetCategoryNorthern;
         }
 
         public void Allignment()
@@ -479,6 +484,7 @@ namespace YouTuDe.Client
 
         private void btnsavesouthern_Click(object sender, EventArgs e)
         {
+            categorySouthern = "Southern";
             for (int j = 0; j < ClientViewSpotsSouthernUserControl.attractions.Length; j++)
             {
                 Console.WriteLine(ClientViewSpotsSouthernUserControl.attrid[j]);
@@ -486,12 +492,14 @@ namespace YouTuDe.Client
                 Console.WriteLine(ClientViewSpotsSouthernUserControl.attractions[j]);
                 Console.WriteLine(ClientViewSpotsSouthernUserControl.cost[j]);
                 Console.WriteLine(ClientViewSpotsSouthernUserControl.desti[j]);
+                Console.WriteLine(categorySouthern);
             }
             Console.WriteLine();
         }
 
         private void btnsavenorthern_Click(object sender, EventArgs e)
         {
+            categoryNorthern = "Northern";
             for (int j = 0; j < ClientViewSpotsNorthernUserControl.attractions.Length; j++)
             {
                 Console.WriteLine(ClientViewSpotsNorthernUserControl.attrid[j]);
@@ -499,6 +507,7 @@ namespace YouTuDe.Client
                 Console.WriteLine(ClientViewSpotsNorthernUserControl.attractions[j]);
                 Console.WriteLine(ClientViewSpotsNorthernUserControl.cost[j]);
                 Console.WriteLine(ClientViewSpotsNorthernUserControl.desti[j]);
+                Console.WriteLine(categoryNorthern);
             }
             Console.WriteLine();
         }
