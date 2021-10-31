@@ -43,8 +43,12 @@ namespace YouTuDe
         public static string destination;
         public static string concatDestination;
 
+        public static string attractid;
+        public static string concatAttractid;
+
         public static string result;
 
+        public static string[] attrid = new string[100];
         public static string[] attractions = new string[100];
         public static string[] cost = new string[100];
         public static string[] desti = new string[100];
@@ -106,10 +110,14 @@ namespace YouTuDe
             destination = (Client.Spots.destinationNorthern += (touristDestinationUpdate + "|"));
             concatDestination = destination.Substring(0, destination.Length - 1);
 
+            attractid = (Client.Spots.attractidSouthern += (attractionIdUpdate + ","));
+            concatAttractid = attractid.Substring(0, attractid.Length - 1);
+
             this.Visible = false;
 
             result = "Spots Count: "+spotsCount.ToString() + "\n" + "Attractions: "+spots + "\n" + "Total Cost: Php "+total.ToString();
 
+            attrid = concatAttractid.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
             attractions = spots.Split(new string[] {","}, StringSplitOptions.RemoveEmptyEntries);
             cost = concatMoney.Split(new string[] {","}, StringSplitOptions.RemoveEmptyEntries);
             desti = concatDestination.Split(new string[] {"|"}, StringSplitOptions.RemoveEmptyEntries);

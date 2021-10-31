@@ -33,12 +33,13 @@ namespace YouTuDe.Client
         public static string totalUpdate;
 
         public static double totalSouthern;
-        public static string attractid;
+        public static string attractidSouthern;
         public static string attractionSouthern;
         public static string totalSouthernString = totalSouthern.ToString();
         public static string destinationSouthern;
 
         public static double totalNorthern;
+        public static string attractidNorthern;
         public static string attractionNorthern;
         public static string totalNorthernString = totalNorthern.ToString();
         public static string destinationNorthern;
@@ -53,6 +54,7 @@ namespace YouTuDe.Client
         //Reset Northern
         public static int resetCountNorthern = 0;
         public static double resetTotalNorthern = 0.00;
+        public static string resetAttractNorthern = "";
         public static string resetSpotsNorthern = "";
         public static string resetDestinationNorthern = "";
 
@@ -103,7 +105,7 @@ namespace YouTuDe.Client
         {
             totalSouthern = resetCountSouthern;
             ClientViewSpotsSouthernUserControl.spotsCount = resetCountSouthern;
-            attractid = resetAttractSouthern;
+            attractidSouthern = resetAttractSouthern;
             attractionSouthern = resetSpotsSouthern;
             destinationSouthern = resetDestinationSouthern;
         }
@@ -112,6 +114,7 @@ namespace YouTuDe.Client
         {
             totalNorthern = resetCountNorthern;
             ClientViewSpotsNorthernUserControl.spotsCount = resetCountNorthern;
+            attractidNorthern = resetAttractNorthern;
             attractionNorthern = resetSpotsNorthern;
             destinationNorthern = resetDestinationNorthern;
 
@@ -426,6 +429,8 @@ namespace YouTuDe.Client
 
         private void btnsouthern_Click(object sender, EventArgs e)
         {
+            ResetSouthern();
+
             btnsouthern.Visible = false;
             btnsavesouthern.Visible = false;
             btnchecksouthern.Visible = false;
@@ -444,6 +449,8 @@ namespace YouTuDe.Client
 
         private void btnnorthern_Click(object sender, EventArgs e)
         {
+            ResetNorthern();
+
             btnnorthern.Visible = false;
             btnsavenorthern.Visible = false;
             btnchecknorthern.Visible = false;
@@ -475,6 +482,7 @@ namespace YouTuDe.Client
             for (int j = 0; j < ClientViewSpotsSouthernUserControl.attractions.Length; j++)
             {
                 Console.WriteLine(ClientViewSpotsSouthernUserControl.attrid[j]);
+                Console.WriteLine(Login.userid);
                 Console.WriteLine(ClientViewSpotsSouthernUserControl.attractions[j]);
                 Console.WriteLine(ClientViewSpotsSouthernUserControl.cost[j]);
                 Console.WriteLine(ClientViewSpotsSouthernUserControl.desti[j]);
@@ -486,6 +494,8 @@ namespace YouTuDe.Client
         {
             for (int j = 0; j < ClientViewSpotsNorthernUserControl.attractions.Length; j++)
             {
+                Console.WriteLine(ClientViewSpotsNorthernUserControl.attrid[j]);
+                Console.WriteLine(Login.userid);
                 Console.WriteLine(ClientViewSpotsNorthernUserControl.attractions[j]);
                 Console.WriteLine(ClientViewSpotsNorthernUserControl.cost[j]);
                 Console.WriteLine(ClientViewSpotsNorthernUserControl.desti[j]);

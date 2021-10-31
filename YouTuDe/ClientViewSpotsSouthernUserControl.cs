@@ -110,7 +110,7 @@ namespace YouTuDe
             destination = (Client.Spots.destinationNorthern += (touristDestinationUpdate + "|"));
             concatDestination = destination.Substring(0, destination.Length - 1);
 
-            attractid = (Client.Spots.attractid += (attractionIdUpdate + ","));
+            attractid = (Client.Spots.attractidSouthern += (attractionIdUpdate + ","));
             concatAttractid = attractid.Substring(0, attractid.Length - 1);
 
             this.Visible = false;
