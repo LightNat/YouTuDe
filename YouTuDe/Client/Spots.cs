@@ -434,7 +434,9 @@ namespace YouTuDe.Client
 
         private void btnsouthern_Click(object sender, EventArgs e)
         {
-            ResetSouthern();
+            Client.Spots spots = new Client.Spots();
+            this.Visible = false;
+            spots.Show();
 
             btnsouthern.Visible = false;
             btnsavesouthern.Visible = false;
@@ -454,7 +456,9 @@ namespace YouTuDe.Client
 
         private void btnnorthern_Click(object sender, EventArgs e)
         {
-            ResetNorthern();
+            Client.Spots spots = new Client.Spots();
+            this.Visible = false;
+            spots.Show();
 
             btnnorthern.Visible = false;
             btnsavenorthern.Visible = false;
