@@ -527,6 +527,13 @@ namespace YouTuDe.Client
                         Console.WriteLine(ClientViewSpotsSouthernUserControl.cost[j]);
                         Console.WriteLine(ClientViewSpotsSouthernUserControl.desti[j]);
                         Console.WriteLine(categorySouthern);
+                        Console.WriteLine(containeridSouthern);
+
+                        Connection.Connection.DB();
+                        Function.Function.gen = "INSERT INTO attractionSelectedClient(attractionid, userid, touristAttraction, touristDestination, attractionCost, containerid, attractionCategory) VALUES('"+ClientViewSpotsSouthernUserControl.attrid[j]+"', '"+Login.userid+"', '"+ ClientViewSpotsSouthernUserControl.attractions[j] + "', '"+ClientViewSpotsSouthernUserControl.desti[j]+"', '"+ClientViewSpotsSouthernUserControl.cost[j]+"', '"+containeridSouthern+"', '"+categorySouthern+"') ";
+                        Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.conn);
+                        Function.Function.command.ExecuteNonQuery();
+                        Connection.Connection.conn.Close();
                     }
                     Console.WriteLine();
                 }
