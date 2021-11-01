@@ -51,7 +51,7 @@ namespace YouTuDe
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(5, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(303, 103);
+            this.panel1.Size = new System.Drawing.Size(320, 103);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -68,7 +68,7 @@ namespace YouTuDe
             this.panel2.Controls.Add(this.pbprofile);
             this.panel2.Location = new System.Drawing.Point(5, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(293, 93);
+            this.panel2.Size = new System.Drawing.Size(310, 93);
             this.panel2.TabIndex = 0;
             // 
             // lbluserid
@@ -164,7 +164,7 @@ namespace YouTuDe
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(33)))), ((int)(((byte)(32)))));
             this.Controls.Add(this.panel1);
             this.Name = "TouristUserControl";
-            this.Size = new System.Drawing.Size(313, 113);
+            this.Size = new System.Drawing.Size(330, 113);
             this.Load += new System.EventHandler(this.TouristUserControl_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
