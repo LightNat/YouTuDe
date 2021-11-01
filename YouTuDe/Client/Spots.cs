@@ -66,6 +66,10 @@ namespace YouTuDe.Client
         int count;
         string name;
 
+        //for container
+        public static string containeridNorthern;
+        public static string containeridSouthern;
+
         public Spots()
         {
             InitializeComponent();
@@ -488,32 +492,105 @@ namespace YouTuDe.Client
 
         private void btnsavesouthern_Click(object sender, EventArgs e)
         {
-            categorySouthern = "Southern";
-            for (int j = 0; j < ClientViewSpotsSouthernUserControl.attractions.Length; j++)
+            try
             {
-                Console.WriteLine(ClientViewSpotsSouthernUserControl.attrid[j]);
-                Console.WriteLine(Login.userid);
-                Console.WriteLine(ClientViewSpotsSouthernUserControl.attractions[j]);
-                Console.WriteLine(ClientViewSpotsSouthernUserControl.cost[j]);
-                Console.WriteLine(ClientViewSpotsSouthernUserControl.desti[j]);
-                Console.WriteLine(categorySouthern);
+                Connection.Connection.DB();
+                Function.Function.gen = "INSERT INTO selectedContainerClient(userid) VALUES('"+Login.userid+"')";
+                Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.conn);
+                Function.Function.command.ExecuteNonQuery();
+                Connection.Connection.conn.Close();
             }
-            Console.WriteLine();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            try
+            {
+                Connection.Connection.DB();
+                Function.Function.gen = "SELECT TOP 1 * FROM selectedContainerClient ORDER BY containerid DESC";
+                Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.conn);
+                Function.Function.reader = Function.Function.command.ExecuteReader();
+
+                if (Function.Function.reader.HasRows)
+                {
+                    Function.Function.reader.Read();
+
+                    containeridSouthern = Function.Function.reader.GetValue(0).ToString();
+
+                    categorySouthern = "Southern";
+                    for (int j = 0; j < ClientViewSpotsSouthernUserControl.attractions.Length; j++)
+                    {
+                        Console.WriteLine(ClientViewSpotsSouthernUserControl.attrid[j]);
+                        Console.WriteLine(Login.userid);
+                        Console.WriteLine(ClientViewSpotsSouthernUserControl.attractions[j]);
+                        Console.WriteLine(ClientViewSpotsSouthernUserControl.cost[j]);
+                        Console.WriteLine(ClientViewSpotsSouthernUserControl.desti[j]);
+                        Console.WriteLine(categorySouthern);
+                    }
+                    Console.WriteLine();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnsavenorthern_Click(object sender, EventArgs e)
         {
-            categoryNorthern = "Northern";
-            for (int j = 0; j < ClientViewSpotsNorthernUserControl.attractions.Length; j++)
+            try
             {
-                Console.WriteLine(ClientViewSpotsNorthernUserControl.attrid[j]);
-                Console.WriteLine(Login.userid);
-                Console.WriteLine(ClientViewSpotsNorthernUserControl.attractions[j]);
-                Console.WriteLine(ClientViewSpotsNorthernUserControl.cost[j]);
-                Console.WriteLine(ClientViewSpotsNorthernUserControl.desti[j]);
-                Console.WriteLine(categoryNorthern);
+                Connection.Connection.DB();
+                Function.Function.gen = "INSERT INTO selectedContainerClient(userid) VALUES('"+Login.userid+"')";
+                Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.conn);
+                Function.Function.command.ExecuteNonQuery();
+                Connection.Connection.conn.Close();
             }
-            Console.WriteLine();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            try
+            {
+                Connection.Connection.DB();
+                Function.Function.gen = "SELECT TOP 1 * FROM selectedContainerClient ORDER BY containerid DESC";
+                Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.conn);
+                Function.Function.reader = Function.Function.command.ExecuteReader();
+
+                if (Function.Function.reader.HasRows)
+                {
+                    Function.Function.reader.Read();
+
+                    containeridNorthern = Function.Function.reader.GetValue(0).ToString();
+
+                    categoryNorthern = "Northern";
+                    for (int j = 0; j < ClientViewSpotsNorthernUserControl.attractions.Length; j++)
+                    {
+                        Console.WriteLine(ClientViewSpotsNorthernUserControl.attrid[j]);
+                        Console.WriteLine(Login.userid);
+                        Console.WriteLine(ClientViewSpotsNorthernUserControl.attractions[j]);
+                        Console.WriteLine(ClientViewSpotsNorthernUserControl.cost[j]);
+                        Console.WriteLine(ClientViewSpotsNorthernUserControl.desti[j]);
+                        Console.WriteLine(categoryNorthern);
+                        Console.WriteLine(containeridNorthern);
+
+                        Connection.Connection.DB();
+                        Function.Function.gen = "INSERT INTO attractionSelectedClient(attractionid, userid, touristAttraction, touristDestination, attractionCost, containerid, attractionCategory) VALUES('"+ClientViewSpotsNorthernUserControl.attrid[j]+ "', '"+Login.userid+"', '"+ClientViewSpotsNorthernUserControl.attractions[j]+ "', '"+ClientViewSpotsNorthernUserControl.desti[j]+ "', '"+ClientViewSpotsNorthernUserControl.cost[j]+ "', '"+containeridNorthern+"', '"+categoryNorthern+ "')";
+                        Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.conn);
+                        Function.Function.command.ExecuteNonQuery();
+                        Connection.Connection.conn.Close();
+                    }
+                    Console.WriteLine();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            
         }
     }
 }
