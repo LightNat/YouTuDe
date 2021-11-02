@@ -30,6 +30,7 @@ namespace YouTuDe.Client
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.lblfullname = new System.Windows.Forms.Label();
             this.btnLogout = new System.Windows.Forms.Button();
             this.btnStatus = new System.Windows.Forms.Button();
@@ -39,11 +40,12 @@ namespace YouTuDe.Client
             this.pbprofile = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanelContainer = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbprofile)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -62,6 +64,17 @@ namespace YouTuDe.Client
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(167, 343);
             this.panel1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(56, 317);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(46, 13);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Tourist";
             // 
             // lblfullname
             // 
@@ -172,10 +185,19 @@ namespace YouTuDe.Client
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.flowLayoutPanelContainer);
             this.panel3.Location = new System.Drawing.Point(5, 5);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(353, 223);
             this.panel3.TabIndex = 0;
+            // 
+            // flowLayoutPanelContainer
+            // 
+            this.flowLayoutPanelContainer.AutoScroll = true;
+            this.flowLayoutPanelContainer.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanelContainer.Name = "flowLayoutPanelContainer";
+            this.flowLayoutPanelContainer.Size = new System.Drawing.Size(353, 223);
+            this.flowLayoutPanelContainer.TabIndex = 0;
             // 
             // label1
             // 
@@ -186,17 +208,6 @@ namespace YouTuDe.Client
             this.label1.Size = new System.Drawing.Size(135, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "REQUESTS";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(56, 317);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Tourist";
             // 
             // Requests
             // 
@@ -216,6 +227,7 @@ namespace YouTuDe.Client
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbprofile)).EndInit();
             this.panel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,5 +247,6 @@ namespace YouTuDe.Client
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblfullname;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelContainer;
     }
 }

@@ -55,5 +55,6 @@ CREATE TABLE attractionSelectedClient(
 CREATE TABLE selectedContainerClient
 (
 	containerid int PRIMARY KEY IDENTITY(1, 1),
-	userid int NOT NULL
+	userid int NOT NULL,
+	category varchar(50) NOT NULL
 );

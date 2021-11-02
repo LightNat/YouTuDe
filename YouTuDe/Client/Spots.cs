@@ -492,10 +492,11 @@ namespace YouTuDe.Client
 
         private void btnsavesouthern_Click(object sender, EventArgs e)
         {
+            categorySouthern = "Southern";
             try
             {
                 Connection.Connection.DB();
-                Function.Function.gen = "INSERT INTO selectedContainerClient(userid) VALUES('"+Login.userid+"')";
+                Function.Function.gen = "INSERT INTO selectedContainerClient(userid, category) VALUES('"+Login.userid+"', '"+categorySouthern+"')";
                 Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.conn);
                 Function.Function.command.ExecuteNonQuery();
                 Connection.Connection.conn.Close();
@@ -518,7 +519,7 @@ namespace YouTuDe.Client
 
                     containeridSouthern = Function.Function.reader.GetValue(0).ToString();
 
-                    categorySouthern = "Southern";
+                    
                     for (int j = 0; j < ClientViewSpotsSouthernUserControl.attractions.Length; j++)
                     {
                         Console.WriteLine(ClientViewSpotsSouthernUserControl.attrid[j]);
@@ -548,8 +549,9 @@ namespace YouTuDe.Client
         {
             try
             {
+                categoryNorthern = "Northern";
                 Connection.Connection.DB();
-                Function.Function.gen = "INSERT INTO selectedContainerClient(userid) VALUES('"+Login.userid+"')";
+                Function.Function.gen = "INSERT INTO selectedContainerClient(userid, category) VALUES('"+Login.userid+"', '"+categoryNorthern+"')";
                 Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.conn);
                 Function.Function.command.ExecuteNonQuery();
                 Connection.Connection.conn.Close();
@@ -572,7 +574,6 @@ namespace YouTuDe.Client
 
                     containeridNorthern = Function.Function.reader.GetValue(0).ToString();
 
-                    categoryNorthern = "Northern";
                     for (int j = 0; j < ClientViewSpotsNorthernUserControl.attractions.Length; j++)
                     {
                         Console.WriteLine(ClientViewSpotsNorthernUserControl.attrid[j]);

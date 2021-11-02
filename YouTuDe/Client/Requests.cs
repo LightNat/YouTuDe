@@ -24,6 +24,14 @@ namespace YouTuDe.Client
         int count;
         string name;
 
+        public static int containerCount;
+        private string[] containerid = new string[100];
+        private string[] userid = new string[100];
+        private string[] firstname = new string[100];
+        private string[] lastname = new string[100];
+        private string[] userprofile = new string[100];
+        private string[] category = new string[100];
+
         public Requests()
         {
             InitializeComponent();
@@ -38,6 +46,8 @@ namespace YouTuDe.Client
             Allignment();
 
             lblfullname.Text = Login.firstname + " " + Login.lastname;
+
+            GenerateContainer();
         }
 
         public void Allignment()
@@ -177,6 +187,74 @@ namespace YouTuDe.Client
         {
             btnLogout.BackColor = Color.FromArgb(28, 33, 32);
             btnLogout.ForeColor = Color.FromArgb(255, 222, 89);
+        }
+
+        private void GenerateContainer()
+        {
+            flowLayoutPanelContainer.Controls.Clear();
+
+            try
+            {
+                Connection.Connection.DB();
+                Function.Function.gen = "SELECT COUNT(*) AS Count FROM selectedContainerClient WHERE selectedContainerClient.userid = '"+Login.userid+"' ";
+                Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.conn);
+                Function.Function.reader = Function.Function.command.ExecuteReader();
+
+                if (Function.Function.reader.HasRows)
+                {
+                    Function.Function.reader.Read();
+
+                    string count = Function.Function.reader.GetValue(0).ToString();
+                    containerCount = Convert.ToInt32(count);
+
+                    ContainerUserControl[] containerUserControl = new ContainerUserControl[containerCount];
+
+                    try
+                    {
+                        Connection.Connection.DB();
+                        Function.Function.gen = "SELECT selectedContainerClient.containerid, selectedContainerClient.userid, users.firstname, users.lastname, users.profile, selectedContainerClient.category FROM selectedContainerClient INNER JOIN users ON selectedContainerClient.userid = users.userid WHERE selectedContainerClient.userid = '"+Login.userid+"' ";
+                        Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.conn);
+                        Function.Function.reader = Function.Function.command.ExecuteReader();
+
+                        if (Function.Function.reader.HasRows)
+                        {
+                            for (int i = 0; i < containerUserControl.Length; i++)
+                            {
+                                Function.Function.reader.Read();
+
+                                containerid[i] = Function.Function.reader.GetValue(0).ToString();
+                                userid[i] = Function.Function.reader.GetValue(1).ToString();
+                                firstname[i] = Function.Function.reader.GetValue(2).ToString();
+                                lastname[i] = Function.Function.reader.GetValue(3).ToString();
+                                userprofile[i] = Function.Function.reader.GetValue(4).ToString();
+                                category[i] = Function.Function.reader.GetValue(5).ToString();
+
+                                //Initialize
+                                containerUserControl[i] = new ContainerUserControl();
+
+                                //adding Data
+                                containerUserControl[i].containerid = containerid[i];
+                                containerUserControl[i].userid = userid[i];
+                                containerUserControl[i].firstname = firstname[i];
+                                containerUserControl[i].lastname = lastname[i];
+                                containerUserControl[i].userprofile = userprofile[i];
+                                containerUserControl[i].category = category[i];
+
+                                flowLayoutPanelContainer.Controls.Add(containerUserControl[i]);
+                            }
+                        }
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

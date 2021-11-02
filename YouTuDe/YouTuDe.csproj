@@ -206,11 +206,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelectedUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SelectedUserControl.Designer.cs">
+      <DependentUpon>SelectedUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="TouristUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="TouristUserControl.Designer.cs">
       <DependentUpon>TouristUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ContainerUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ContainerUserControl.Designer.cs">
+      <DependentUpon>ContainerUserControl.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Account\Account.resx">
       <DependentUpon>Account.cs</DependentUpon>
@@ -299,8 +311,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="SelectedUserControl.resx">
+      <DependentUpon>SelectedUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TouristUserControl.resx">
       <DependentUpon>TouristUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContainerUserControl.resx">
+      <DependentUpon>ContainerUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
