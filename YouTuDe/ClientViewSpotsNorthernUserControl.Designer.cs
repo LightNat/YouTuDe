@@ -40,6 +40,8 @@ namespace YouTuDe
             this.label2 = new System.Windows.Forms.Label();
             this.lblattraction = new System.Windows.Forms.Label();
             this.pbprofile = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbprofile)).BeginInit();
@@ -52,12 +54,14 @@ namespace YouTuDe
             this.panel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.panel1.Location = new System.Drawing.Point(5, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(320, 125);
+            this.panel1.Size = new System.Drawing.Size(320, 150);
             this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.label5);
+            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.btnadd);
             this.panel2.Controls.Add(this.lblcost);
             this.panel2.Controls.Add(this.lbldestination);
@@ -69,13 +73,13 @@ namespace YouTuDe
             this.panel2.Controls.Add(this.pbprofile);
             this.panel2.Location = new System.Drawing.Point(5, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(310, 115);
+            this.panel2.Size = new System.Drawing.Size(310, 140);
             this.panel2.TabIndex = 0;
             // 
             // btnadd
             // 
             this.btnadd.ForeColor = System.Drawing.Color.Green;
-            this.btnadd.Location = new System.Drawing.Point(269, 92);
+            this.btnadd.Location = new System.Drawing.Point(269, 117);
             this.btnadd.Name = "btnadd";
             this.btnadd.Size = new System.Drawing.Size(38, 20);
             this.btnadd.TabIndex = 14;
@@ -164,14 +168,34 @@ namespace YouTuDe
             this.pbprofile.TabIndex = 1;
             this.pbprofile.TabStop = false;
             // 
-            // ClientViewSpotsUserControl
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(98, 94);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 13);
+            this.label1.TabIndex = 15;
+            this.label1.Text = "Package:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(125, 107);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(99, 13);
+            this.label5.TabIndex = 16;
+            this.label5.Text = "A Member  limit of 7";
+            // 
+            // ClientViewSpotsNorthernUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(33)))), ((int)(((byte)(32)))));
             this.Controls.Add(this.panel1);
-            this.Name = "ClientViewSpotsUserControl";
-            this.Size = new System.Drawing.Size(330, 135);
+            this.Name = "ClientViewSpotsNorthernUserControl";
+            this.Size = new System.Drawing.Size(330, 160);
             this.Load += new System.EventHandler(this.ClientViewSpotsUserControl_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -194,5 +218,7 @@ namespace YouTuDe
         private System.Windows.Forms.Label lbldestination;
         private System.Windows.Forms.Label lblcost;
         private System.Windows.Forms.Button btnadd;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label1;
     }
 }
