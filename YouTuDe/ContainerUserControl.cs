@@ -55,6 +55,18 @@ namespace YouTuDe
         private void btndelete_Click(object sender, EventArgs e)
         {
             MessageBox.Show(containerid);
+            try
+            {
+                Connection.Connection.DB();
+                Function.Function.gen = "";
+                Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.conn);
+                Function.Function.command.ExecuteNonQuery();
+                Connection.Connection.conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
