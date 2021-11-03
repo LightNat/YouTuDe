@@ -54,14 +54,35 @@ namespace YouTuDe
 
         private void btndelete_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(containerid);
             try
             {
                 Connection.Connection.DB();
-                Function.Function.gen = "";
+                Function.Function.gen = "DELETE FROM selectedContainerClient WHERE containerid = '"+containerid+"' ";
                 Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.conn);
                 Function.Function.command.ExecuteNonQuery();
                 Connection.Connection.conn.Close();
+                try
+                {
+                    Connection.Connection.DB();
+                    Function.Function.gen = "DELETE FROM attractionSelectedClient WHERE attractionSelectedClient.containerid = '" + containerid + "' ";
+                    Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.conn);
+                    Function.Function.command.ExecuteNonQuery();
+
+                    MessageBox.Show("Travel Request Successfully Deleted!", "DELETE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Client.Requests requests = new Client.Requests();
+                    requests.Show();
+
+                    //To avoid form Duplication
+                    Form form = this.FindForm();
+                    form.Close();
+                    form.Dispose();
+
+                    Connection.Connection.conn.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
             catch (Exception ex)
             {

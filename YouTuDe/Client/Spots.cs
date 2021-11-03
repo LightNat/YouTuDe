@@ -537,6 +537,15 @@ namespace YouTuDe.Client
                         Connection.Connection.conn.Close();
                     }
                     Console.WriteLine();
+
+                    MessageBox.Show("Travel Request Successfully Saved!", "SAVE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Client.Requests requests = new Client.Requests();
+                    requests.Show();
+
+                    //To avoid form Duplication
+                    Form form = this.FindForm();
+                    form.Close();
+                    form.Dispose();
                 }
             }
             catch (Exception ex)
@@ -591,6 +600,15 @@ namespace YouTuDe.Client
                         Connection.Connection.conn.Close();
                     }
                     Console.WriteLine();
+
+                    MessageBox.Show("Travel Request Successfully Saved!", "SAVE", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Client.Requests requests = new Client.Requests();
+                    requests.Show();
+
+                    //To avoid form Duplication
+                    Form form = this.FindForm();
+                    form.Close();
+                    form.Dispose();
                 }
             }
             catch (Exception ex)
