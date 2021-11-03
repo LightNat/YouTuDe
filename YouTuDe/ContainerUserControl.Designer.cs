@@ -31,10 +31,12 @@ namespace YouTuDe
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.flowLayoutPanelSelected = new System.Windows.Forms.FlowLayoutPanel();
             this.lblcategory = new System.Windows.Forms.Label();
+            this.dataGridViewSelected = new System.Windows.Forms.DataGridView();
+            this.btndelete = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSelected)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -49,20 +51,13 @@ namespace YouTuDe
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.Controls.Add(this.btndelete);
+            this.panel2.Controls.Add(this.dataGridViewSelected);
             this.panel2.Controls.Add(this.lblcategory);
-            this.panel2.Controls.Add(this.flowLayoutPanelSelected);
             this.panel2.Location = new System.Drawing.Point(5, 5);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(310, 200);
             this.panel2.TabIndex = 0;
-            // 
-            // flowLayoutPanelSelected
-            // 
-            this.flowLayoutPanelSelected.AutoScroll = true;
-            this.flowLayoutPanelSelected.Location = new System.Drawing.Point(21, 33);
-            this.flowLayoutPanelSelected.Name = "flowLayoutPanelSelected";
-            this.flowLayoutPanelSelected.Size = new System.Drawing.Size(269, 105);
-            this.flowLayoutPanelSelected.TabIndex = 0;
             // 
             // lblcategory
             // 
@@ -74,6 +69,26 @@ namespace YouTuDe
             this.lblcategory.Size = new System.Drawing.Size(83, 20);
             this.lblcategory.TabIndex = 1;
             this.lblcategory.Text = "Southern";
+            // 
+            // dataGridViewSelected
+            // 
+            this.dataGridViewSelected.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSelected.Location = new System.Drawing.Point(20, 43);
+            this.dataGridViewSelected.Name = "dataGridViewSelected";
+            this.dataGridViewSelected.Size = new System.Drawing.Size(269, 109);
+            this.dataGridViewSelected.TabIndex = 2;
+            // 
+            // btndelete
+            // 
+            this.btndelete.BackColor = System.Drawing.Color.White;
+            this.btndelete.ForeColor = System.Drawing.Color.Red;
+            this.btndelete.Location = new System.Drawing.Point(232, 174);
+            this.btndelete.Name = "btndelete";
+            this.btndelete.Size = new System.Drawing.Size(75, 23);
+            this.btndelete.TabIndex = 3;
+            this.btndelete.Text = "DELETE";
+            this.btndelete.UseVisualStyleBackColor = false;
+            this.btndelete.Click += new System.EventHandler(this.btndelete_Click);
             // 
             // ContainerUserControl
             // 
@@ -87,6 +102,7 @@ namespace YouTuDe
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSelected)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -96,6 +112,7 @@ namespace YouTuDe
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lblcategory;
-        public System.Windows.Forms.FlowLayoutPanel flowLayoutPanelSelected;
+        private System.Windows.Forms.DataGridView dataGridViewSelected;
+        private System.Windows.Forms.Button btndelete;
     }
 }

@@ -43,63 +43,18 @@ namespace YouTuDe
         {
             lblcategory.Text = category;
 
-            GenerateSelected();
+            DataFIll();
         }
 
-        public void GenerateSelected()
+        public void DataFIll()
         {
-            flowLayoutPanelSelected.Controls.Clear();
+            Function.Function.gen = "SELECT attractionSelectedClient.touristAttraction, attractionSelectedClient.touristDestination, attractionSelectedClient.attractionCost, attractionSelectedClient.selectedid, attractionSelectedClient.attractionid FROM attractionSelectedClient WHERE attractionSelectedClient.userid = '" + userid + "' AND attractionSelectedClient.containerid = '" + containerid + "' ";
+            Function.Function.fill(Function.Function.gen, dataGridViewSelected);
+        }
 
-            try
-            {
-                Connection.Connection.DB();
-                Function.Function.gen = "SELECT COUNT(*) FROM attractionSelectedClient WHERE attractionSelectedClient.userid = '" + userid + "' ";
-                Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.conn);
-                Function.Function.reader = Function.Function.command.ExecuteReader();
-
-                if (Function.Function.reader.HasRows)
-                {
-                    Function.Function.reader.Read();
-
-                    string count = Function.Function.reader.GetValue(0).ToString();
-                    attractionSelectedCount = Convert.ToInt32(count);
-                    
-                    SelectedUserControl[] selectedUserControl = new SelectedUserControl[attractionSelectedCount];
-
-                    try
-                    {
-                        Connection.Connection.DB();
-                        Function.Function.gen = "SELECT * FROM attractionSelectedClient WHERE attractionSelectedClient.userid = '"+userid+"' AND attractionSelectedClient.containerid = '"+containerid+"' ";
-                        Function.Function.command = new SqlCommand(Function.Function.gen, Connection.Connection.conn);
-                        Function.Function.reader = Function.Function.command.ExecuteReader();
-
-                        if (Function.Function.reader.HasRows)
-                        {
-                            for (int i = 0; i < selectedUserControl.Length; i++)
-                            {
-                                Function.Function.reader.Read();
-
-
-                                //Initialize
-                                selectedUserControl[i] = new SelectedUserControl();
-
-                                //Adding Data
-
-
-                                flowLayoutPanelSelected.Controls.Add(selectedUserControl[i]);
-                            }
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+        private void btndelete_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(containerid);
         }
     }
 }

@@ -206,12 +206,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SelectedUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="SelectedUserControl.Designer.cs">
-      <DependentUpon>SelectedUserControl.cs</DependentUpon>
-    </Compile>
     <Compile Include="TouristUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -311,9 +305,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SelectedUserControl.resx">
-      <DependentUpon>SelectedUserControl.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="TouristUserControl.resx">
       <DependentUpon>TouristUserControl.cs</DependentUpon>
     </EmbeddedResource>
