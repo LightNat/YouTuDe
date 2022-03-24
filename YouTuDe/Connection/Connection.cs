@@ -9,7 +9,7 @@ using System.Windows.Forms;
 namespace YouTuDe.Connection
 {
     class Connection
-    {
+    {//Redo
         public static SqlConnection conn;
         private static string connect = "Data Source=DESKTOP-GQFB644;Initial Catalog=YouTuDe;Integrated Security=True";
 
