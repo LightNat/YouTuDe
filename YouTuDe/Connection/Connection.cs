@@ -11,7 +11,7 @@ namespace YouTuDe.Connection
     class Connection
     {
         public static SqlConnection conn;
-        private static string connect = "Data Source=DESKTOP-Q4Sl8VR;Initial Catalog=YouTuDe;Integrated Security=True";
+        private static string connect = "Data Source=DESKTOP-GQFB644;Initial Catalog=YouTuDe;Integrated Security=True";
 
         public static void DB()
         {
